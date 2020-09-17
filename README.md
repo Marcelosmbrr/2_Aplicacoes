@@ -1,2 +1,2 @@
 # 3_Projetos
- Este repositório contém os projetos cujo objetivo é a aplicação dos aprendizados contidos no repositório "Aprendizado Full Stack".
+Este repositório - que, claramente, não possui material por ora - servirá para armazenar aqueles projetos que procedem o aprendizado das tecnologias, e assim, sendo portanto, um que irá conter as aplicações mais sólidas e digamos "seriamente realizadas".

@@ -153,7 +153,8 @@
     if(isset($_GET['codigo'])){
         $codigo = addslashes($_GET['codigo']);
         $pessoa_obj->excluirPessoa($codigo);
-        header("location: Interface_adm.php");
+        echo "<script language='javascript'>window.location.href='Interface_adm.php';</script>";
+                    
     }
  
 ?>

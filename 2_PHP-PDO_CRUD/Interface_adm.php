@@ -1,4 +1,16 @@
-<!doctype html>
+<?php
+
+    //Dados de conexão com o banco
+    //$username = "root"; $pass = ""; $dsn = "mysql:host=localhost;dbname=first_crud";
+    
+    require_once 'Classe_pessoa.php';
+    
+    //Instanciado um objeto da classe pessoa e chamando os métodos
+    $pessoa_obj = new Classe_pessoa();
+    $pessoa_obj->conexao("mysql:host=localhost;dbname=first_crud", "root", "");
+    
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -74,26 +86,11 @@
                     <tbody>
                         
                             <?php
-                        
-                                //Declaração dados de conexão
-                                $username = "root";
-                                $pass = "";
-                                $dsn = "mysql:host=localhost;dbname=first_crud";
-
-                                $conn = new PDO($dsn, $username, $pass);
-
-                                $sql = "SELECT codigo, nome, cpf, sexo, data_nasc, email, cidade, estado FROM cadastros"; 
-
-                                //stmt recebe o statment
-                                $stmt = $conn->prepare($sql);
-
-                                //stmt executa o comando de SELECT
-                                $stmt->execute();
-
-
-                                //Fetch recebe um array com todas os registros do banco
-                                //O array será uma matriz, com linhas que possuem colunas
-                                $array_registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                
+                                //Chamando método buscarDados
+                                //Array_registros recebe o retorno do método //Que é o retorno da função count()
+                                $array_registros = $pessoa_obj->buscarDados("SELECT codigo, nome, cpf, sexo, data_nasc, email, cidade, estado FROM cadastros");
+                                
                                 //Variável recebe número de linhas do array_registros
                                 $num_registros = count($array_registros);
                                 
@@ -118,7 +115,11 @@
                             <!-- Apesar da tag php ter sido fechada, logo acima, o bloco de código For, que percorre as linhas, não foi -->
                             <!-- Desta forma, esta tag abaixo, de TD com botões é, ainda, outro Table Data da atual Table Row -->
                             <!-- Agora haverá um Table Data a mais, em cada linha, que terá dois botões como conteúdo -->
-                            <td><a href=""><button type='button' class='btn btn-primary btn-sm'>Editar</button></a><a href=""><button type='button' class='btn btn-primary btn-sm'>Excluir</button></a></td>
+                            <td>
+                                <a href=""><button type='button' class='btn btn-primary btn-sm'>Editar</button></a>
+                                <!-- Fizemos um GET artificial no link do botão excluir, abaixo -->
+                                <a href="Interface_adm.php?codigo=<?php echo $array_registros[$linha]['codigo']; ?>"><button type='button' class='btn btn-primary btn-sm'>Excluir</button></a>
+                            </td>
                             <?php
                                 //Dentro desta tag php, reaberta, iremos fechar a atual Table Row
                                 echo "<tr>";
@@ -131,15 +132,11 @@
                             ?>
                  
                     </tbody>
-                </table>
-
+                 </table>
               </div>
           </div> 
       </div>
       
-      
-    
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -147,3 +144,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+<?php
+    
+    //Recuperação do GET artificial do botão de Excluir
+    
+    if(isset($_GET['codigo'])){
+        $codigo = addslashes($_GET['codigo']);
+        $pessoa_obj->excluirPessoa($codigo);
+        header("location: Interface_adm.php");
+    }
+ 
+?>

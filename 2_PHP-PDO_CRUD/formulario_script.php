@@ -1,4 +1,16 @@
-<!doctype html>
+<?php
+
+    //Dados de conexão com o banco
+    //$username = "root"; $pass = ""; $dsn = "mysql:host=localhost;dbname=first_crud";
+    
+    require_once 'Classe_pessoa.php';
+    
+    //Instanciado um objeto da classe pessoa e chamando os métodos
+    $pessoa_obj = new Classe_pessoa();
+    $pessoa_obj->conexao("mysql:host=localhost;dbname=first_crud", "root", "");
+    
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -25,43 +37,25 @@
                 $estado = isset($_POST["estado"]) ? $_POST["estado"] : null;
                 $cep = isset($_POST["cep"]) ? $_POST["cep"] : null;
                 
-                //Declaração dados de conexão
-                $username = "root";
-                $pass = "";
-                $dsn = "mysql:host=localhost;dbname=first_crud";
-                
-                //Conexão
-                if($conn = new PDO($dsn, $username, $pass)){
-                
-                    //Esta variável contém o comando SQL //O comando não é executado, mas ao invés disto, a função "prepare" retorna um PDOstatment object
-                    //Como alternativa, existe a função "query", que executa o comando SQL por si mesma //$stmt->query(comando SQL)
-                    $sql = "INSERT INTO `cadastros`(`nome`, `cpf`, `data_nasc`, `sexo`, `email`, `endereco`, `cidade`, `estado`, `cep`) VALUES (:nome, :cpf, :data_nasc, :sexo, :email, :endereco, :cidade, :estado, :cep)";
-                    $stmt = $conn->prepare($sql);
+                //$sql = "INSERT INTO `cadastros`(`nome`, `cpf`, `data_nasc`, `sexo`, `email`, `endereco`, `cidade`, `estado`, `cep`) VALUES (:nome, :cpf, :data_nasc, :sexo, :email, :endereco, :cidade, :estado, :cep)"
+                    
+                //Chamamos o objeto cadastrarDados
+                $retorno = $pessoa_obj->cadastrarDados($nome, $cpf, $data_nascimento, $sexo, $email, $endereco, $cidade, $estado, $cep);
 
-                    $stmt->bindParam(":nome", $nome);
-                    $stmt->bindParam(":cpf", $cpf);
-                    $stmt->bindParam(":data_nasc", $data_nascimento);
-                    $stmt->bindParam(":sexo", $sexo);
-                    $stmt->bindParam(":email", $email);
-                    $stmt->bindParam(":endereco", $endereco);
-                    $stmt->bindParam(":cidade", $cidade);
-                    $stmt->bindParam(":estado", $estado);
-                    $stmt->bindParam(":cep", $cep);
-
-                    //Executamos o statment, que retorna true realizado com sucesso, ou false, no caso de falha
-                    if($stmt->execute()){
-                        echo "<div class='alert alert-success' role='alert'>
-                         Sucesso! Dados enviados e recebidos!
-                        </div>";
-                        }
-                    else{
-                        echo "<div class='alert alert-danger' role='alert'>
-                          Ops! Ocorreu algum problema no envio dos dados!
-                        </div>";    
-                    }                  
-                }
+                //O retorno do método será true ou false, como descrito no próprio método
+                if($retorno == true){
+                    echo "<div class='alert alert-success' role='alert'>
+                     Sucesso! Dados enviados e recebidos!
+                    </div>";
+                    }
+                else{
+                    echo "<div class='alert alert-danger' role='alert'>
+                      Ops! Ocorreu algum problema no envio dos dados!
+                    </div>";    
+                }                  
+                
                
-              ?>
+            ?>
               
               <a href="Cadastro_home.html" class = "btn btn-primary">VOLTAR
               </a>

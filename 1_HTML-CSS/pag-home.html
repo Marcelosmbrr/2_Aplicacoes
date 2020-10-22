@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Notícias da Cidade</title>
+</head>
+
+<body id = "tres-colunas" class = "home"> 
+    <!-- classe no body serve para servir de referêncial para estilizações de página-->
+    <!-- Por exemplo, se a classe do body, no documento html, for "home", definimos que o botão "home" da barra de navegação estará marcado-->
+    <!-- A id também possui o mesmo fim, dado que nem todas as páginas possuem três colunas-->
+
+    <!-- Inicio Container ------------->
+    <div id = "container">
+
+        <!-- Inicio Topo -------------->
+        <div id = "topo">
+            <img src="imagens/logo.png" alt="" class = "logo">
+            <ul id = "navegacao">
+                <li class = "primeiro"><a id = "home" href="">Home</a></li>
+                <li><a id = "brasil" href="pag-brasil.html">Brasil</a></li>
+                <li><a id = "internacional" href="pag-internacional.html">Internacional</a></li>
+                <li><a id = "economia" href="pag-economia.html">Economia</a></li>
+                <li><a id = "saude" href="pag-saude.html">Saúde</a></li>
+                <li><a id = "ciencia" href="pag-ciencia.html">Ciência</a></li>
+                <li><a id = "fotos" href="pag-fotos.html">Fotos</a></li>
+            </ul>
+
+        </div>
+        <!-- Fim Topo -------------->
+
+        <!-- Inicio Conteudo ------------->
+        <div id = "conteudo">
+
+            <!-- Inicio conteudo primario ------------------>
+            <div id = "primario">
+                <!-- Subcaixa "Destaques" da caixa conteudo primeiro ------->
+                <div class = "caixa destaque">
+                    <h2> Destaques </h2>
+                    <div class = "caixa-conteudo">
+                        <h3> Nova Legislação</h3>
+                        <img src="imagens/taxi.jpg" alt="taxi" width="100%" class = "imagem-principal">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Dolores earum fugit quos sint quam dolore temporibus adipisci, beatae repellendus odit vero tempora.
+                        </p>
+                        <a href="">Leia mais</a>
+                    </div>
+                </div>
+                <!-- Subcaixa "Notícias do mundo" da caixa conteudo primario ------->
+                <div class = "caixa">
+                    <h2> Mundo </h2>
+                    <div class = "caixa-conteudo">
+                        <ul id = "noticias-baixo">
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Novas Tecnologias</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Novas Tecnologias</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Novas Tecnologias</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Novas Tecnologias</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+
+            </div>
+            <!-- Fim conteudo primario ------------------>
+
+            <!-- Inicio conteudo secundario ------------------>
+            <div id = "secundario">
+                <div class = "caixa entrevista">
+                    <h2> Última entrevista </h2>
+                    <div class = "caixa-conteudo">
+                        <h3> Entrevista com Immanuel</h3>
+                        <img src="imagens/taxi.jpg" alt="taxi" width="100%" class = "imagem-principal">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Dolores earum fugit quos sint quam dolore temporibus adipisci, beatae repellendus odit vero tempora.
+                        </p>
+                        <a href="">Leia mais</a>
+                    </div>
+                </div>
+
+                <div class = "caixa">
+                    <h2> Notícias Recentes </h2>
+                    <div class = "caixa-conteudo">
+                        <ul id = "noticias-baixo">
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Lorem ipsum </h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Lorem ipsum </h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="imagens/tecnologia.jpg" alt="" width="80">
+                                    <h3> Lorem ipsum </h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                                </a>
+                            </li>
+                        </ul>   
+                    </div>
+                </div>
+
+            </div>
+            <!-- Fim conteudo secundario ------------------>
+
+            <!-- Inicio caixa lateral ------------------>
+            <div id = "lateral">
+            
+                <!-- Inicio caixa "Entrevistas" -------------->
+                <div class = "caixa">
+                    <h2> Entrevistas </h2>
+                    <div class = "caixa-conteudo">
+                        <ul>
+                            <li><a href="">Nome 1</a></li>
+                            <li><a href="">Nome 2</a></li>
+                            <li><a href="">Nome 3</a></li>
+                            <li><a href="">Nome 4</a></li>
+                            <li><a href="">Nome 5</a></li>
+                            <li><a href="">Nome 6</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim caixa "Entrevistas" -------------------->
+
+                <!-- Inicio caixa "News" ---------->
+                <div class = "caixa">
+                    <h2> News </h2>
+                    <div class = "caixa-conteudo">
+                        <form action="">
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="text" name = "email" id = "email" placeholder="E-mail">
+                                <input type="submit" value = "Cadastrar" class = "submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Fim caixa "News" ----------->
+
+            </div>
+            <!-- Fim caixa lateral ------------------>
+            
+
+        </div>
+        
+        <!-- Fim Conteudo ------------->
+
+    </div>
+    <!-- Fim Container ------------->
+
+    <div id = "container-rodape" style = "clear: both;"> <!-- Sem clear, o rodape irá contornar os elementos flutuantes, se posicionando ao lado, e não abaixo -->
+        <div id = "rodape">
+            &copy; Copyright 2000-2020 Notícias Cidade
+        </div>
+        
+    </div>
+    
+</body>
+</html>

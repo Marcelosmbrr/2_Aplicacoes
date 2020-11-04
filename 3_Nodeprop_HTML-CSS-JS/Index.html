@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>NodeProp - Especializada em Soluções Digitais </title>
+    	<meta name="description" content="Agência especializada em Marketing Digital, Criação de Sites e Aplicativos Mobile.">
+    	<meta name="keywords" content="Agência digital, Marketing, Sites">
+    	<meta name="robots" content="index, follow">
+    	<meta name="author" content="Marcelosmbr">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media-queries.css">
+        <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> <!-- font-family: 'Staatliches', cursive; -->
+    	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'> <!-- font-family: 'lato', cursive; -->
+    	<link rel="icon" href="img/icon.png">
+    </head>
+    <body>
+        
+        <header class = "cabecalho">
+
+            <!-- Poderia fazer um cabeçalho geral, mas irei fazer um para cada situação, ainda que configurações sejam repetidas -->
+            <div class = "cabecalho-mobile">
+                <div class = "logo-mobile"> </div> <div class = "logo-mobile2"> </div>
+                <button class = "btn-menu"> <i class="fas fa-bars fa-lg"></i> </button>
+                <nav class = "nav-mobile">
+                    <ul class = "menu-mobile">
+                        <li class = "menu-mobile-item btn-back"> <button> <i class="fas fa-angle-double-right fa-lg"></i> </button>  </li>
+                        <li class = "menu-mobile-item"> <a href=""> Item 1</a> </li>
+                        <li class = "menu-mobile-item"> <a href=""> Item 2</a> </li>
+                        <li class = "menu-mobile-item"> <a href=""> Item 3</a></li>
+                        <li class = "menu-mobile-item"> <a href=""> Item 4</a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class = "cabecalho-desk">
+                <div class = "logo-desk"> <img src="img/logo.png" alt=""></div> 
+                <nav class = "nav-desk">
+                    <ul class = "menu-desk">
+                        <li class = "menu-desk-item"> <a href=""> Item 1</a> </li>
+                        <li class = "menu-desk-item"> <a href=""> Item 2</a> </li>
+                        <li class = "menu-desk-item"> <a href=""> Item 3</a></li>
+                        <li class = "menu-desk-item"> <a href=""> Item 4</a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+        <div class = "banner">
+
+            <div class = "container-banner">
+                <div class = "banner-titulo">
+                    <h2> TEXTO DE NÍVEL SECUNDÁRIO </h2>
+                    <h3>Descrição extensa de nível terciário</h3>
+                </div>
+
+                <div class = "banner-buttons">
+                    <button class = "btn-cadastrar"> Cadastrar <i class="fas fa-user-check"></i> </button>
+                    <button class = "btn-sobre"> Sobre <i class="fas fa-question-circle"></i> </button>  
+                </div>
+            </div>
+
+        </div>
+
+        <main class = "servicos">
+
+            <article class = "servico">
+
+                <a href=""> <img src="img/md.jpg" alt="alternative text"></a>
+
+                <div class = "texto-interno">
+                    <a href=""> hiperlink para a imagem </a>
+                    <h4> Texto de nível quaternário </h4>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                    </p>
+                </div>
+                
+            </article>
+
+            <article class = "servico">
+
+                <a href=""> <img src="img/cs.jpg" alt="alternative text"></a>
+
+                <div class = "texto-interno">
+                    <a href=""> hiperlink para a imagem </a>
+                    <h4> Texto de nível quaternário </h4>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                    </p>
+                </div>
+
+            </article>
+
+            <article class = "servico">
+
+                <a href=""> <img src="img/criacoes.jpg" alt="alternative text"></a>
+
+                <div class = "texto-interno">
+                    <a href=""> hiperlink para a imagem </a>
+                    <h4> Texto de nível quaternário </h4>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                    </p>
+                </div>
+
+            </article>
+
+        </main>
+
+        <footer>
+
+            <div class = "redes-sociais">
+                <i class="fab fa-facebook"></i> <i class="fab fa-twitter-square"></i> <i class="fab fa-instagram-square"></i>
+            </div>
+
+            <div>
+                <h3> &copy; Marcelosmbr 2020 </h3>
+            </div>
+
+        </footer>
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- JQUERY --> 
+         <script src="Jquery/jquery-3.5.1.min.js"></script>
+         <script>
+
+             $(".btn-menu").click(function(){
+                 $('.nav-mobile').show(400);
+             });
+
+             $(".btn-back").click(function(){
+                 $('.nav-mobile').hide(400);
+             });
+
+             $(".btn-sobre").effect("shake");
+                
+
+
+        </script>
+    </body>
+
+</html>

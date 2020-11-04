@@ -271,9 +271,62 @@ img{
     width: 100%;
 }
 
+.texto-interno{
+    padding: 1%;
+}
+
 .texto-interno h4{
     font-weight: bolder;
 
+}
+
+/* SECTION CADASTRO */
+.section-cadastro{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #130400;
+    padding: 2% 0;
+}
+
+.cadastro-texto{
+    width: 80%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2%;
+}
+
+.cadastro-texto h2{
+    font-family: 'Staatliches', cursive;
+    font-size: 2em;
+}
+
+.cadastro-texto h3{
+    font-size: 1.3em;
+}
+
+.form-cadastro{
+    width: 80%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    background:;
+
+}
+
+.form-cadastro input{
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 13px 13px 13px 13px;
+}
+
+.form-cadastro button{
+    margin-top: 2%;
+    border-radius: 13px 13px 13px 13px;
+    padding: 15px 0;
 }
 
 /* FOOTER */

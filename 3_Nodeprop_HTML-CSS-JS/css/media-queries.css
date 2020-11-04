@@ -16,6 +16,21 @@
         display: grid;
         grid-template-rows: 20px 20px 100px;
         grid-gap: 20px;
+        padding: 1%;
+    }
+
+    .form-cadastro{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form-cadastro input{
+        width: 75%;
+    }
+
+    .form-cadastro button{
+        margin: 0 0 0 2%;
+        width: 15%;
     }
 
 }
@@ -30,6 +45,21 @@
         display: grid;
         grid-template-rows: 20px 20px 100px;
         grid-gap: 20px;
+        padding: 1%;
+    }
+
+    .form-cadastro{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form-cadastro input{
+        width: 75%;
+    }
+
+    .form-cadastro button{
+        margin: 0 0 0 2%;
+        width: 15%;
     }
 
 }
@@ -44,6 +74,21 @@
         display: grid;
         grid-template-rows: 20px 20px 100px;
         grid-gap: 20px;
+        padding: 1%;
+    }
+
+    .form-cadastro{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form-cadastro input{
+        width: 75%;
+    }
+
+    .form-cadastro button{
+        margin: 0 0 0 2%;
+        width: 15%;
     }
 
     .cabecalho-mobile{

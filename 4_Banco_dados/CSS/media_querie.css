@@ -1,3 +1,11 @@
+@media (max-width: 1260px){
+
+    .container_atualizacoes{
+        display: none;
+    }
+}
+
+
 @media (max-width: 800px){
     #grid-container{
         width: 100%;

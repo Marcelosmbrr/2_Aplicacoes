@@ -35,11 +35,6 @@ function botaoToggle(){
         botao.style.background = "#efefef";
     }
 
-
-
-    
-
-
 }
 
 

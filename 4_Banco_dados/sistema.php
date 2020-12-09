@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +13,19 @@
     <script src="Jquery/jquery-3.5.1.min.js"></script>
     <script src = "./Scripts_JS/script.js"></script>
     <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./CSS/css.css">
-    <link rel="stylesheet" href="./CSS/media_querie.css">
-    <link rel="stylesheet" href="./CSS/icons-style.css">
+    <link rel="stylesheet" href="./CSS_sistema/css.css">
+    <link rel="stylesheet" href="./CSS_sistema/media_querie.css">
+    <link rel="stylesheet" href="./CSS_sistema/icons-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body onresize = "viewport_change()">
+
+    <?php 
+        //Após o login, este sistema será aberto, e receberá o nome de usuário
+        //O nome será usado como referência para: o nome exibido no perfil, e para a consulta da foto respectiva
+        $usuario = isset($_POST["username"]) ? $_POST["username"] : null;
+    ?>
 
     <!-- CONTAINER GRID - DIMENSÕES IGUAIS AO BODY - DIVISÃO DA PÁGINA EM 3 COLUNAS -->
     <div id = "grid-container">
@@ -30,7 +42,7 @@
                     <li class = "list-item"><a href="#" class = "a-colesquerda"><i class="fas fa-list-alt"></i>Suporte</a></li>
                 </ul>
 
-                <button class = "btn-deslogar"><i class="fas fa-sign-out-alt"></i> Deslogar</button>
+                <button class = "btn-deslogar" onclick = "deslogar()"><i class="fas fa-sign-out-alt"></i> Deslogar</button>
                 
             </nav>
         </div>
@@ -60,7 +72,7 @@
                     </div>
 
                     <div class = "caixa-superior_dados">
-                        <h3>{{usuário}}</h3> <p><i class="fas fa-globe"></i> Online</p>
+                        <h3> <?php echo $_SESSION['nome_usuario']; ?> </h3> <p><i class="fas fa-globe"></i> Online</p>
                     </div>
                     
                 </div>
@@ -74,12 +86,12 @@
                 <div class = "container-perfil-dados">
 
                     <div class = "caixa-botao-editar">
-                        <button class = "botao btn-editar">Editar Perfil</button>
+                        <button class = "botao btn-editar">Editar foto</button>
                     </div>
 
                     <div class = "usuario-informacoes">
-                        <h2>{{ usuário }}</h2>
-                        <p>@db_manager{{number}}</p>
+                        <h2> <?php echo $_SESSION['nome_usuario']; ?> </h2>
+                        <p>@administrador</p>
                         <br>
                         <p><i class="far fa-calendar-alt"></i> Entrou em 03/12/2020</p>
                     </div>
@@ -107,7 +119,7 @@
         <!-- TERCEIRA COLUNA - COLUNA DA ESQUERDA -->
         <div class = "coluna coldireita">
 
-            <div class = "container_atualizacoes">
+            <div class = "container_atualizacoes"> 
 
                 <div class = "atualizacoes-cabecalho">
                     <h3><i class="fas fa-file-signature"></i> Registro de atualizações</h3>
@@ -160,7 +172,7 @@
     </div>
     <!-- FIM DO CONTAINER GRID -->
 
-    <!-- SCRIPTS JQUERY -->
+    <!-- SCRIPTS JS E JQUERY -->
     <script>
 
         $(".btn-publicar").click(() => {
@@ -178,6 +190,12 @@
         $(".btn-toggle").click(() => {
             $(".menu-atualizacoes").slideToggle(1000);
         })
+
+        function deslogar(){
+
+            window.location = "http://localhost/1_Projetos/4_Banco_dados/Login.php";
+    
+        }
 
 
 

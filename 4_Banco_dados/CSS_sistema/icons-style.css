@@ -1,3 +1,13 @@
+/*ÍCONES DO MENU HORIZONTAL */
+li i{
+    margin-right: 5px;
+}
+
+.fa-sort-down{
+    margin-left: 5px;
+    cursor: pointer;
+}
+
 /* ÍCONE DO GLOBO */
 .fa-globe{ 
     color: green;
@@ -5,20 +15,6 @@
 
 /* ÍCONES DO MENU DA COLUNA ESQUERDA */
 a i{
-    color: #8390fa;
+    color: #5f82b9;
     margin-right: 10px;
-}
-
-/*ÍCONES DO MENU HORIZONTAL */
-li i{
-    margin-right: 5px;
-}
-
-.fa-file-signature{
-    color:  #8390fa;
-}
-
-.fa-sort-down{
-    margin-left: 5px;
-    cursor: pointer;
 }

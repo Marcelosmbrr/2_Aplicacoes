@@ -19,7 +19,7 @@
 }
 
 .coluna{
-    background-color: #8390fa;
+    background-color: #5f82b9;
 }
 
 main{ 
@@ -42,6 +42,10 @@ main{
 img{
     display: block;
     width: 100%;
+}
+
+input[type = checkbox]{
+    display: none;
 }
 
 /* CONTAINER GRID - COLUNA ESQUERDA ----------------------------------------------------------------------------------*/
@@ -84,7 +88,7 @@ img{
 }
 
 .a-colesquerda i{
-    color: #8390fa;
+    color: #5f82b9;
 }
 
 .a-colesquerda:hover{
@@ -104,7 +108,7 @@ img{
 /* CONTAINER GRID - COLUNA CENTRAL ----------------------------------------------------------------------------------*/
 /*Metade superior -----------------*/
 .perfil-usuario{
-    background-color:#8390fa;
+    background-color:#5f82ba;
     display: grid;
     grid-template-rows: 1fr 5fr 4fr 1fr ;
     grid-gap: 5px;
@@ -170,7 +174,7 @@ img{
     margin-right: 10px;
     margin-top: 10px;
     border-radius: 10px;
-    border: 2px solid #8390fa;
+    border: 2px solid #5f82ba;
     color: black;
     font-size: 1em;
     outline: none;
@@ -186,15 +190,17 @@ img{
     padding: 10px;
 }
 
+/* Menu horizontal para as funcionalidades do banco */
 .menu-perfil_ul{
     height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: #333;
+    padding: 0px 0px 10px 0px;
 }
 
-.menu-perfil_ul li{
+.db_li{
     text-align: center;
     cursor: pointer;
     display: flex;
@@ -203,7 +209,7 @@ img{
     width: 80%;
     height: 80%;
     margin: 0 2px;
-    background:  #8390fa;
+    background:  #5f82ba;
     margin-bottom: -8px;
     transition: all 1s;
 }
@@ -216,13 +222,52 @@ img{
     color: black;
 }
 
+.mr-sm-2{
+    padding: 5px;
+    width: 200px;
+}
+
+#btn-pesquisar{
+    cursor: pointer;
+    padding: 2px 5px;
+    transition: 1s;
+
+}
+
+#btn-pesquisar i{
+    margin: auto;
+}
+
+.form-inline{ /* formulario para pesquisar clientes */
+    display: none;
+}
+
 /*Metade inferior -----------------*/
 .container-conteudo{
     border-right: 2px solid #333;
     border-left: 2px solid #333; 
-    display: grid;
-    grid-template-rows: repeat(1fr,3);
-    grid-gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.div-conteudo{
+    width: 95%;
+    height: 90%;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+}
+
+.div-conteudo{
+    display: none;
+}
+
+.table-clientes{
+    width: 100%;
+}
+
+tr{
+    background: #eca43b;
 }
 
 /*CONTAINER GRID - COLUNA DIREITA ----------------------------------------------------------------------------------*/
@@ -249,10 +294,6 @@ img{
     align-self: center;
     margin-left: 10px;
     color: white;
-}
-
-input[type = checkbox]{
-    display: none;
 }
 
 .atualizacoes-cabecalho label{
@@ -318,7 +359,7 @@ input[type = checkbox]{
 
 .att-time{
     align-self: center;
-    color:  #8390fa;
+    color:  #5f82ba;
 }
 
 .text-att{
@@ -345,20 +386,6 @@ input[type = checkbox]{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*ESTRUTURAS MOBILE ---------------------------------------- */
 /* Menu Mobile ------- */
 .container-menu-mobile{
@@ -368,12 +395,9 @@ input[type = checkbox]{
     top: 62px;
     left: 0px;
     width: 200px;
-    height: 450px;
+    height: 400px;
     display: none;
 }
-
-
-
 
 
 

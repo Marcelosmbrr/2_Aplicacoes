@@ -3,6 +3,10 @@ li i{
     margin-right: 5px;
 }
 
+.fa-database{
+    color: #eca43b;
+}
+
 .fa-sort-down{
     margin-left: 5px;
     cursor: pointer;
@@ -17,4 +21,8 @@ li i{
 a i{
     color: #5f82b9;
     margin-right: 10px;
+}
+
+.fa-file-signature{
+    color: #5f82b9;
 }

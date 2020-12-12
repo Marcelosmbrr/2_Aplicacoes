@@ -1,14 +1,14 @@
 <?php
 
-    session_start();
-
 
     //Classe Usuário para consultar a tabela de funcionarios
     class Clientes{
 
-        public function get_clientes($sql){
+        public function get_clientes(){
 
             global $pdo;
+
+            $sql = "SELECT * FROM clientes";
 
             $stmt = $pdo->prepare($sql);
             $stmt->execute();

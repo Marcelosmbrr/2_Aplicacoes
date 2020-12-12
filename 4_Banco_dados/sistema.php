@@ -2,6 +2,12 @@
 
     session_start();
 
+    require_once './Scripts_PHP/conexao.php';
+    require_once './Scripts_PHP/ClientesClass.php';
+
+     //Instanciado um objeto da classe Clientes
+     $c = new Clientes();
+
 ?>
 
 <!DOCTYPE html>
@@ -136,22 +142,61 @@
                                 <th scope="col">Sexo</th>
                                 <th scope="col">Cidade</th>
                                 <th scope="col">Estado</th>
+                                <th scope="col">Cidade</th>
+                                <th scope="col">Editar/Excluir</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                                    <?php
+                                <?php
 
-                                        
-                                        
-
-                                        
-                                        
-                                    ?>
+                                //Chamando método 
+                                //Array_registros recebe o retorno do método //Que é o retorno da função count()
+                                $array_registros = $c->get_clientes();
+                                
+                                //Variável recebe número de linhas do array_registros
+                                $num_registros = count($array_registros);
+                                
+                                //Inserção dos dados em uma tabela HTML //Explicação
+                                if($num_registros > 0){ 
+                                     //No for, criamos o laço que percorre as linhas da matriz
+                                    //Número de linhas da matriz é igual ao retorno da função count
+                                    for($linha = 0; $linha < $num_registros; $linha ++ ){
+                                        //O echo abaixo abre a tag de linha da tabela //Tr = table row
+                                        echo "<tr>";
+                                        //No foreach percorremos as colunas da matriz
+                                        foreach($array_registros[$linha] as $coluna => $valor){
+                                            //No echo abaixo usamos o valor de cada coluna lida para preencher um td //Td = table data
+                                            //A cada laço do foreach, (1) o valor da coluna da linha da matriz é lida, (2) um td é criado, e (3) seu valor é o da coluna lida
+                                           echo "<td scope='row' style= 'text-align:center' >$valor</td>";
+                                        }
+                                        //O laço do foreach acaba quando forem percorridas todas as colunas da linha da matriz
+                                        //Neste ponto, a linha da matriz, com suas colunas e valores, já foram inseridos na linha da tabela //Todos os TD foram criados na TR
+                                        //Mas ainda faltam os botões de "editar" e "excluir" que devem existir ao final de todas as linhas
+                                     
+                            ?>
+                            <!-- Apesar da tag php ter sido fechada, logo acima, o bloco de código For, que percorre as linhas, não foi -->
+                            <!-- Desta forma, esta tag abaixo, de TD com botões é, ainda, outro Table Data da atual Table Row -->
+                            <!-- Agora haverá um Table Data a mais, em cada linha, que terá dois botões como conteúdo -->
+                            <td style= "text-align:center">
+                                <a href=""><button type='button' class='btn btn-primary btn-sm'>Editar</button></a>
+                                <!-- Fizemos um GET artificial no link do botão excluir, abaixo -->
+                                <a href="Interface_adm.php?codigo=<?php echo $array_registros[$linha]['codigo']; ?>"><button type='button' class='btn btn-primary btn-sm'>Excluir</button></a>
+                            </td>
+                            <?php
+                                //Dentro desta tag php, reaberta, iremos fechar a atual Table Row
+                                echo "<tr>";
+                                //Abaixo está o fechamento do laço de leitura da atual linha da matriz
+                                //Se não for a última, o processo irá reiniciar, e se for, será terminado
+                                    }
+                                //Neste ponto toda matriz, com suas linhas e colunas, foi transposta para uma tabela HTML
+                                //Abaixo fechamos o If
+                                }   
+                            ?>
 
                             </tbody>
                     </table>
-                    <h1>PROJETO EM ANDAMENTO</h1>
+
                 </div>
 
             </section>

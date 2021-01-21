@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="display-pag2.css">
+    <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+    <title>CSS Flexbox</title>
+</head>
+<body>
+
+    <header>
+        
+        <h1 class = "logo-item"> <i class="fab fa-css3-alt"></i> CSS FLEXBOX</h1>
+
+        <nav>
+            <ul class = "list-nav">
+                <li class = "list-item li-first"><a href="https://origamid.com/projetos/flexbox-guia-completo/">Guia Origamid</a></li>
+                <li class = "list-item li-second"><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceitos_Basicos_do_Flexbox">Guia MDN Mozilla</a></li>
+                <li class = "list-item li-second"><a href="https://www.devmedia.com.br/css3-flexbox-funcionamento-e-propriedades/29532">Guia DevMedia</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <h1 class = "page-tittle">FLEX ITEMS</h1>
+
+    <main>
+
+        <!-- Each section will cover a different segment of Flexbox -->
+        <!-- The first section will have the subclass fc-a, the second will have the subclass fc-b, and so on the sections will differ -->
+        <!-- The practical example of each section will have three Flex items (the orange boxes). Each item in each section will have the subclass "[item order] - [section letter]" -->
+        <section class = "flex-container fc-a">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX ITEM</h2>
+                <p>Como demonstrado na página anterior, o CSS FlexBox consiste em um Flex Container, que é o elemento Pai, e em Flex Items, que são os filhos deste primeiro.
+                <br>A partir das funcionalidades do Flex Container, e de acordo com seus eixos principal e transversal, os Flex Items podem ser posicionados de forma agrupada.
+                <br>Mas, os próprios Flex Items podem ser manipulados diretamente, e não apenas em termos de posicionamento, mas também de tamanho e capacidade de expansão e encolhimento.
+                </p>
+                <br>
+                <h3>Propriedades DEFAULT dos Flex Items</h3>
+                <p>Por padrão, o tamanho inicial dos elementos é definido a partir do seu conteúdo interno. Portanto, o <strong>"flex-basis" é "auto"</strong>.
+                <br>Por padrão, não há expansão no eixo principal, sendo obedecido o width do elemento ou o flex-basis. Portanto, o <strong>"flex-grow" é "0"</strong>.
+                <br>Por padrão, os itens podem ser reduzidos, a partir de seu tamanho inicial, para caber no Container. Portanto, o <strong>"flex-shrink" é 1</strong>.
+                <br>Por padrão, os itens serão esticados para preencher o espaço disponível no eixo transversal. Portanto, o <strong>"align-self" é "stretch"</strong>.
+                </br>
+            </div>
+    
+            <div class = "fc-content fc-content-a">
+                <div class = "flex-item one-a">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-a">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-a">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-b">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX BASIS</h2>
+                <p>A propriedade flex-basis define o tamanho inicial dos elementos, em unidades de pixel, antes que o espaço remanescente seja redistribuído.
+                <br>Seu valor padrão "auto" define que se os elementos não possuírem um tamanho já definido, com width, as dimensões dos seus conteúdos serão utilizadas como medida.
+                <br>Também pode ser definido com valores em pixel, %, e outros. <strong>Mas, neste caso é importante enfatizar que</strong> as medidas usam como referencial o eixo principal do Flex Container.
+                <br>Quando o Flex Grow é declarado com um valor igual ou maior que 1, o Flex Basis, se omitido, por padrão será 0.
+                <br>Se o Flex Basis for declarado com o valor 0, sem outra declaração de dimensionalidade, o efeito será igual ao de atribuir nulo ao width.
+                <br><strong>Os valores possíveis são</strong>: auto, medida px, medida % e 0.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="basis-item-one">Flex-basis:</label>
+                    <input type="text" id="basis-item-one" name="fbasis_one" placeholder="Item-one">
+
+                    <label for="basis-item-two">Flex-basis:</label>
+                    <input type="text" id="basis-item-two" name="fbasis_two" placeholder="Item-two">
+
+                    <label for="basis-item-three">Flex-basis:</label>
+                    <input type="text" id="basis-item-three" name="fbasis_three" placeholder="Item-three">
+
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-b">
+                <div class = "flex-item one-b">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-b">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-b">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-c">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX GROW</h2>
+                <p>Esta propriedade define a capacidade de um Flex Item crescer ao longo de um espaço disponível no eixo principal do Flex Container.
+                <br>Por padrão seu valor é 0, o que significa que os elementos obedecem ou a um width declarado, ou ao valor do Flex Basis.
+                <br>Se o Flex Grow for definido como 1, o elemento irá ocupar 100% do espaço disponível no eixo principal.
+                <br>Se existir mais de um Flex Item, definido com Flex Grow igual a 1, ambos tentarão igualmente ocupar o espaço disponível, mas respeitando o tamanho de seus conteúdos internos.
+                <br>Se um Flex Item for definido com Flex Grow igual a 1, e outro com Flex Grow igual a 2, este último irá ocupar o dobro do espaço do primeiro. Sendo assim, as medições podem ser relativas.
+                <br><strong>Atenção:</strong> Se o Flex Grow for definido como 1, a propriedade Justify-content não poderá ser utilizada, pois desloca, em conjunto, todos os itens ao longo do eixo principal apenas se houver espaço disponível.
+                <br><strong>Os valores possíveis são</strong>: 0, 1 e números maiores que 1.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="grow-item-one">Flex-grow:</label>
+                    <input type="text" id="grow-item-one" name="fgrow_one" placeholder="Item-one">
+
+                    <label for="grow-item-two">Flex-grow:</label>
+                    <input type="text" id="grow-item-two" name="fgrow_two" placeholder="Item-two">
+
+                    <label for="grow-item-three">Flex-grow:</label>
+                    <input type="text" id="grow-item-three" name="fgrow_three" placeholder="Item-three">
+
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-c">
+                <div class = "flex-item one-c">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-c">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-c">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-d">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX SHRINK</h2>
+                <p>Esta propriedade define a capacidade de um Flex Item reduzir seu tamanho, a partir de um inicial, definido com uma declaração Flex Basis ou width, para caber no Flex Container.
+                <br>Por padrão, seu valor é 1, o que significa que todos os itens podem reduzir seus tamanhos para caber no Container, se necessário.
+                <br>Se um elemento for definido com Flex Shrink de valor 0, seu tamanho não irá reduzir. Assim, se o Container Pai, ou Flex Container se tornar menor que o próprio Flex Item -seu filho-, este último irá ultrapassar os seus limites.
+                <br>Se, por exemplo, um Flex Item tiver Flex Shrink declarado como 0, e outro como 1, com a redução do Flex Container o segundo irá reduzir, e o primeiro não irá.
+                <br>Além disso, como o Flex Grow, o Flex Shrink admite medições relativas. 
+                <br><strong>Os valores possíveis são</strong>: 0 e 1.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+                <p>Reduza o Viewport para ver o efeito.</p>
+
+                <form action="#">
+                    <label for="shrink-item-one">Flex-shrink:</label>
+                    <input type="text" id="shrink-item-one" name="fshrink_one" placeholder="Item-one">
+
+                    <label for="shrink-item-two">Flex-shrink:</label>
+                    <input type="text" id="shrink-item-two" name="fshrink_two" placeholder="Item-two">
+
+                    <label for="shrink-item-three">Flex-shrink:</label>
+                    <input type="text" id="shrink-item-three" name="fshrink_three" placeholder="Item-three">
+
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-d">
+                <div class = "flex-item one-d">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-d">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-d">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-e">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">ORDER</h2>
+                <p>Esta propriedade permite ordenar os Flex Items.
+                <br>Funciona em relação ao eixo principal, e do menor para o maior valor. Assim, por exemplo, um Flex Item com Order 1 estará na frente de outro com Order 2.
+                <br><strong>Os valores possíveis são</strong>: todos.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="order-item-one">Order:</label>
+                    <input type="text" id="order-item-one" name="forder_one" placeholder="Item-one">
+
+                    <label for="order-item-two">Order:</label>
+                    <input type="text" id="order-item-two" name="forder_two" placeholder="Item-two">
+
+                    <label for="order-item-three">Order:</label>
+                    <input type="text" id="order-item-three" name="forder_three" placeholder="Item-three">
+
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-e">
+                <div class = "flex-item one-e">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-e">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-e">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-f">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">ALIGN SELF</h2>
+                <p>Esta propriedade permite sobrescrever no item o comportamento que foi definido pela propriedade align-items. Ou seja, o deslocamento será de um só Flex Item, e no eixo transversal.
+                <br><strong>Os valores possíveis são</strong>: auto, stretch, flex-start, flex-end, center e baseline.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="alignself-item-one">Align-self:</label>
+                    <input type="text" id="alignself-item-one" name="fself_one" placeholder="Item-one">
+
+                    <label for="alignself-item-two">Align-self:</label>
+                    <input type="text" id="alignself-item-two" name="fself_two" placeholder="Item-two">
+
+                    <label for="alignself-item-three">Align-self:</label>
+                    <input type="text" id="alignself-item-three" name="fself_three" placeholder="Item-three">
+
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-f">
+                <div class = "flex-item one-f">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-f">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-f">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <nav class = "nav-page">
+        <ul class = "list-nav list-page">
+            <li class = "list-item np-one"><a href="index.html">Flexbox - Flex Container</a></li>
+            <li class = "list-item np-two"><a href="#" style="color: rgba(255, 99, 71);">FlexBox - Flex Item</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        
+    </footer>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Oswald', sans-serif;
+    outline: none;
+}
+
+ul, ol, li, a{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/************ CABEÇALHO ************************/
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #1E212B;
+    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.75);
+}
+
+.logo-item{
+    color: white;
+}
+
+.list-nav{
+    display: flex;
+}
+
+.list-item a{
+    display: block;
+    color: white;
+    margin-right: 20px;
+}
+
+.list-item a:hover{
+    color: tomato;
+}
+
+.fa-css3-alt{
+    color: #264DE4;
+}
+
+/************ TÍTULO DO CONTEÚDO DA PÁGINA ************************/
+
+h1{
+    text-align: center;
+    margin-top: 15px;
+    padding: 15px 0px 10px 0px;
+    font-size: 3em;
+}
+
+/************ TRONCO DA PÁGINA GERAL ************************/
+
+main{
+    width: 100%;
+}
+
+.flex-container{
+    width: 90%;
+    padding: 5px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/*Contém o título e texto sobre a funcionalidade*/
+.fc-presentation{
+    border-left: 4px solid tomato;
+    margin-left: 10px;
+    padding-left: 10px;
+    width: 50%;
+}
+
+/* Contém o exemplo prático do que foi introduzido pelo texto*/
+.fc-content{
+    flex-grow: 1; /* Isto define que o item irá ocupar o espaço disponível */
+    border: 8px solid #333;
+    padding: 5px;
+    display: flex;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75);
+}
+
+.flex-item{
+    background: tomato;
+    text-align: center;
+    margin: 5px;
+}
+
+input[type=text]{
+    border: 2px solid #1E212B;
+    border-radius: 5px;
+    margin: 10px 8px 0px 0px;
+}
+
+input[type=submit]{
+    padding: 2px;
+    cursor: pointer;
+    background: rgba(255, 99, 71, 0.8);
+    border: 1px solid #333;
+}
+
+/************ SEGUNDA SECTION - FC-B ************************/
+
+.fc-content-b{
+    flex-direction: column;
+}
+
+.one-b{
+    flex-basis: 80px;
+}
+
+.two-b{
+    flex-basis: auto;
+}
+
+.three-b{
+    flex-basis: 120px;
+}
+
+/************ TERCEIRA SECTION - FC-C ************************/
+
+.one-c, .two-c, .three-c{
+    flex-grow: 1;
+}
+
+.fc-content-c{
+    flex-direction: column;
+}
+
+/************ QUARTA SECTION - FC-D ************************/
+
+.one-d, .two-d{
+    flex-basis: 350px;
+    flex-shrink: 1;
+}
+
+.three-d{
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+/************ QUINTA SECTION - FC-E ************************/
+
+.two-e{
+    order: 1;
+}
+
+.one-e{
+    order: 2;
+}
+
+.three-e{
+    order: 3;
+}
+
+/************ SEXTA SECTION - FC-F ************************/
+
+.one-f{
+    align-self: flex-start;
+}
+
+.two-f{
+    align-self: flex-end;
+}
+
+.three-f{
+    align-self: center;
+}
+
+/************ NAV PARA MUDAR DE PÁGINA  ************************/
+
+.nav-page{
+    width: 100%;
+    background:#1E212B;
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.np-one a:hover{
+    transform: scale(1.1);
+    color: white;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="display-index.css">
+    <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+    <title>CSS Flexbox</title>
+</head>
+<body>
+
+    <header>
+        <h1 class = "logo-item"> <i class="fab fa-css3-alt"></i> CSS FLEXBOX</h1>
+
+        <nav>
+            <ul class = "list-nav">
+                <li class = "list-item li-first"><a href="https://origamid.com/projetos/flexbox-guia-completo/">Guia Origamid</a></li>
+                <li class = "list-item li-second"><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceitos_Basicos_do_Flexbox">Guia MDN Mozilla</a></li>
+                <li class = "list-item li-second"><a href="https://www.devmedia.com.br/css3-flexbox-funcionamento-e-propriedades/29532">Guia DevMedia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class = "page-tittle">FLEX CONTAINER</h1>
+
+    <main>
+
+        <!-- Each section will cover a different segment of Flexbox -->
+        <!-- The first section will have the subclass fc-a, the second will have the subclass fc-b, and so on the sections will differ -->
+        <!-- The practical example of each section will have three Flex items (the orange boxes). Each item in each section will have the subclass "[item order] - [section letter]" -->
+        <section class = "flex-container fc-a">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">DISPLAY FLEX</h2>
+                <p>A área de um documento que faz uso do flexbox é chamada de Flex Container. 
+                Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex.
+                Desse modo, os elementos-filhos desse contêiner tornar-se-ão do tipo flex.
+                <br>Assim, ao utilizar a propriedade Flexbox, deve-se manter em mente o fato de existir tanto o próprio <strong>Flex Container</strong>, quanto seus filhos, que serão <strong>Flex Items</strong>.
+                <br>As propriedades manipuláveis, disponibilizadas pelo display FlexBox, existem tanto para o Flex Container quanto para os Flex Items.
+                </p>
+                <br>
+                <h3>Propriedades DEFAULT do Display Flex</h3>
+                <p>Por padrão, o eixo principal é o horizontal. Portanto, o <strong>"flex-direction" é "row"</strong>.
+                <br>Por padrão, o alinhamento se dá na borda inicial (superior esquerda) do eixo principal. Portanto, o <strong>"justify-content" é "flex-start"</strong>.
+                <br>Por padrão, os itens serão esticados para preencher o espaço disponível no eixo transversal. Portanto, o <strong>"align-items" é "stretch"</strong>.
+                <br>Por padrão, não há expansão no eixo principal. Os elementos ocupam o espaço de seu conteúdo. Portanto, o <strong>"flex-grow" é 0</strong>, e o <strong>"flex-basis" é "auto"</strong>.
+                <br>Por padrão, os itens podem ser reduzidos para caber no Container. Portanto, o <strong>"flex-shrink" é 1</strong>.
+                <br>Por padrão, os itens do container tentarão se ajustar em uma única linha dentro do container pai. Portanto, o <strong>"flex-wrap" é "nowrap"</strong>.
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-a">
+                <div class = "flex-item one-a">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-a">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-a">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-b">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX DIRECTION</h2>
+                <p>A propriedade flex-direction deve ser aplicada ao container e define o eixo/fluxo de exibição em que os elementos serão organizados. 
+                <br><strong>Os valores possíveis são</strong>: "row", "row-reverse", "column" e "column-reverse".
+                <br>Se o fluxo for definido como "row", o eixo principal será o horizontal, e se for definido como "column", será o vertical.
+                <br>A diferença de "row" e de "row-reverse", e de "column" e "column-reverse" é a ordem de distribuição dos elementos em si, que são inversas.
+                <br>Assim, por exemplo, se com "row" a posição inicial dos elementos é a borda superior esquerda, do Flex Container, com "row-reverse" será na superior direta.
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="flex-direction">Flex-direction:</label>
+                    <input type="text" id="flex-direction" name="fdirection">
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-b">
+                <div class = "flex-item one-b">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-b">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-b">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-c">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">JUSTIFY CONTENT</h2>
+                <p>A propriedade justify-content define o alinhamento dos itens ao longo do eixo principal do container. 
+                <br>Igualmente, só funciona se houver espaço disponível no Flex Container.
+                <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "space-between" e "space-around".
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="flex-justify-content">Justify-content:</label>
+                    <input type="text" id="flex-justify-content" name="fjustify_content">
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-c">
+                <div class = "flex-item one-c">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-c">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-c">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-d">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">ALIGN ITEMS</h2>
+                <p>Essa propriedade define como os itens são distribuídos ao longo do eixo transversal do container.
+                <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "baseline".
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="flex-align-items">Align-items:</label>
+                    <input type="text" id="flex-align-items" name="falign_items">
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-d">
+                <div class = "flex-item one-d">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-d">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-d">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class = "flex-container fc-e">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">ALIGN CONTENT</h2>
+                <p>Alinha as linhas do container em relação ao eixo vertical. A propriedade só funciona se existir mais de uma linha de flex-items. 
+                <br>Portanto, a propriedade só funciona se "flex-wrap" estiver definido como "wrap". É na quebra de linha (wrap) que é formada uma nova.
+                <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "space-between" e "space-around".
+                </p>
+                <br>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
+                <form action="#">
+                    <label for="flex-align-content">Align-content:</label>
+                    <input type="text" id="flex-align-content" name="falign_content">
+                    <input type="submit" value="Ok">
+                  </form>
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-e">
+                <div class = "flex-item one-e">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-e">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-e">
+                    <strong>Item three</strong>
+                </div>
+
+                <div class = "flex-item four-e">
+                    <strong>Item four</strong> 
+                </div>
+    
+                <div class = "flex-item five-e">
+                    <strong>Item five</strong>
+                </div>
+    
+                <div class = "flex-item six-e">
+                    <strong>Item six</strong>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <nav class = "nav-page">
+        <ul class = "list-nav list-page">
+            <li class = "list-item np-one"><a href="#" style="color: rgba(255, 99, 71);">Flexbox - Flex Container</a></li>
+            <li class = "list-item np-two"><a href="pag2.html">FlexBox - Flex Item</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        
+    </footer>
+    
+    
+
+</body>
+</html>

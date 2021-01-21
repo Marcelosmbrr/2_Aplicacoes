@@ -1,2 +1,2 @@
 # 3_Projetos
-Este repositório serve para armazenar aqueles projetos que procedem o aprendizado das tecnologias, sendo, portanto, um que irá conter as aplicações mais sólidas. Vale citar que existem projetos menores, e mais específicos, que poderiam ser definidos como testes funcionais, em alguns diretórios do "Aprendizado Full Stack".
+Este repositório serve para armazenar as aplicações que procedem o aprendizado das tecnologias, sendo, portanto, um que irá conter implementações mais sólidas. 

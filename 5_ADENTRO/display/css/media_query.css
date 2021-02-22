@@ -1,0 +1,142 @@
+@media (min-width: 750px) and (max-width: 989px){
+
+    .cp_buttons-mobile{
+        display: none;
+    }
+
+    .cp_buttons-desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cpd_button_1{
+        justify-self: end;
+        align-self: center;
+        margin-right: 5%;
+    }
+    
+    .cpd_button_2{
+        justify-self: start;
+        align-self: center;
+        margin-left: 5%;
+    }
+
+    .cp_text{
+        display: grid;
+        grid-template-rows: 200px 100px;
+    }
+
+    .cp_container{
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .comic_presentation h2{
+        text-align: left;
+    }
+
+    .section_author{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        grid-gap: 15px;
+    }
+
+
+}
+
+@media (min-width: 990px) and (max-width: 1399px){
+    
+    .cp_buttons-mobile{
+        display: none;
+    }
+
+    .cp_buttons-desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cpd_button_1{
+        justify-self: end;
+        align-self: center;
+        margin-right: 5%;
+    }
+    
+    .cpd_button_2{
+        justify-self: start;
+        align-self: center;
+        margin-left: 5%;
+    }
+
+    .cp_text{
+        display: grid;
+        grid-template-rows: 200px 100px;
+    }
+
+    .cp_container{
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .comic_presentation h2{
+        text-align: left;
+    }
+
+    .section_author{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        grid-gap: 15px;
+    }
+
+
+}
+
+@media (min-width: 1400px){
+    
+    .cp_buttons-mobile{
+        display: none;
+    }
+
+    .cp_buttons-desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cpd_button_1{
+        justify-self: end;
+        align-self: center;
+        margin-right: 5%;
+    }
+    
+    .cpd_button_2{
+        justify-self: start;
+        align-self: center;
+        margin-left: 5%;
+    }
+
+    .cp_text{
+        display: grid;
+        grid-template-rows: 200px 100px;
+    }
+
+    .cp_container{
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .comic_presentation h2{
+        text-align: left;
+    }
+
+    .section_author{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        grid-gap: 15px;
+    }
+
+}

@@ -1,8 +1,3 @@
-@media (max-width:450px){
-    
-
-}
-
 @media (min-width: 750px){
 
     #text-sinopse{
@@ -37,7 +32,6 @@
     }
 
     .cp_buttons-desktop_external{
-        margin-top: 15px;
         display: flex;
         justify-content: center;
         grid-column: span 2; /* a célula ocupa duas colunas*/
@@ -55,16 +49,8 @@
         text-align: left;
     }
 
-    /*.sa_main{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: none;
-        grid-gap: 15px;
-    }
-    */
-
-    .logo_img{
-        width: 850px;
+    .icon_link img{
+        width: 150px;
     }
 }
 
@@ -111,17 +97,8 @@
         text-align: left;
     }
 
-    /*.sa_main{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: none;
-        grid-gap: 15px;
+    .icon_link img{
+        width: 200px;
     }
-    */
-
-    .logo_img{
-        width: 850px;
-    }
-
 
 }

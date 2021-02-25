@@ -1,25 +1,6 @@
 /* MOBILE FIRST*/
 
 /* ESTILO SCROLLBAR******/
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment  {
-    display: none;
-}
-
-::-webkit-scrollbar-track-piece  {
-    background-color: #3b3b3b;
-    -webkit-border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    background-color: #666;
-    -webkit-border-radius: 6px;
-}
 
 /*HEADER****************************************/
 header{
@@ -43,13 +24,14 @@ header{
 }
 
 .header_tittle{
+    width: 100%;
     text-align: center;
     color: #fff;
     padding-bottom: 50px;
 }
 
 .tittle_logo{
-    display: none;
+    visibility: hidden;
 }
 
 .header_subtittle{
@@ -94,6 +76,7 @@ section{
 }
 
 .cp_buttons-desktop_external{
+    margin-top: 50px;
     display: none;
 }
 

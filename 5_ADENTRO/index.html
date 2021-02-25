@@ -24,8 +24,8 @@
     <header>
         <div class = "header_filter">
             <div class = "header_tittle">
-                <h1 class = "tittle_logo"><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" width="450px" alt="Logo"></h1>
-                <h4 class = "header_subtittle" style="font-style: italic;">Um universo fantástico, único e recheado de mistérios</h4>
+                <h1 class = "tittle_logo"><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" alt="Logo"></h1>
+                <h4 class = "header_subtittle" style="font-style: italic; ">Um universo fantástico, único e recheado de mistérios</h4>
             </div>
         </div>
     </header>
@@ -53,10 +53,10 @@
                         </p>
                         <div class = "cp_buttons-desktop_inside">
                             <div class = "cpd_button_1">
-                                <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
+                                <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" alt="" width="100px"></a>
                             </div>
                             <div class = "cpd_button_2">
-                                <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
+                                <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" alt="" width="100px"></a>
                             </div>
                         </div>
 
@@ -68,19 +68,19 @@
                 </div>
                 <div class = "cp_buttons-mobile">
                     <div class = "cpm_button_1">
-                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
+                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" alt="" width="100px"></a>
                     </div>
                     <div class = "cpm_button_2">
-                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
+                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" alt="" width="100px"></a>
                     </div>
                 </div>
 
                 <div class = "cp_buttons-desktop_external">
                     <div class = "cpd_button_1">
-                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
+                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" alt="" width="100px"></a>
                     </div>
                     <div class = "cpd_button_2">
-                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
+                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" alt="" width="100px"></a>
                     </div>
                 </div>
             </div>
@@ -168,14 +168,20 @@
 
     <script src="display/css/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
     <script>
-
+        
         function logo_effect(){
 
             $(document).ready(function(){
-                $(".tittle_logo").fadeIn(1500, function(){ $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}); });
+
+                $(".tittle_logo").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 3000);
+
+                setTimeout(function(){
+                    $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000); 
+                });
                         
             });
         }
+        
 
     </script>
 

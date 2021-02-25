@@ -1,5 +1,26 @@
 /* MOBILE FIRST*/
 
+/* ESTILO SCROLLBAR******/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece  {
+    background-color: #3b3b3b;
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #666;
+    -webkit-border-radius: 6px;
+}
+
 /*HEADER****************************************/
 header{
     width: 100%;
@@ -27,13 +48,21 @@ header{
     padding-bottom: 50px;
 }
 
+.tittle_logo{
+    display: none;
+}
+
+.header_subtittle{
+    visibility: hidden;
+}
+
 /*MAIN***********************************************/
 main{
     width: 100%;
 }
 
 section{
-    margin: 100px auto;
+    margin: 110px auto;
     width: 90%;
 }
 
@@ -76,23 +105,13 @@ section{
 .cpm_button_1{
     justify-self: end;
     align-self: center;
-    margin-right: 2%;
+    margin-right: 15px;
 }
 
 .cpm_button_2{
     justify-self: start;
     align-self: center;
-    margin-left: 2%;
-}
-
-button{
-    width: 150px;
-    height: 70px;
-    border-radius: 10px;
-}
-
-button a{
-    color: black;
+    margin-left: 15px;
 }
 
 /*SECTION 2 - TRAILER*/

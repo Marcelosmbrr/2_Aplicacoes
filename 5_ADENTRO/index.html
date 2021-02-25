@@ -16,15 +16,16 @@
     <link rel="stylesheet" href="display/css/display.css">
     <link rel="stylesheet" href="display/css/media_query.css">
     <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+    <script src="jquery/jquery-3.5.1.js"></script>
     <title>ADENTRO</title>
 </head>
-<body>
+<body onload="logo_effect()">
 
     <header>
         <div class = "header_filter">
             <div class = "header_tittle">
-                <h1><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" width="450px" alt="Logo"></h1>
-                <h4 style="font-style: italic;">Um universo fantástico, único e recheado de mistérios</h4>
+                <h1 class = "tittle_logo"><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" width="450px" alt="Logo"></h1>
+                <h4 class = "header_subtittle" style="font-style: italic;">Um universo fantástico, único e recheado de mistérios</h4>
             </div>
         </div>
     </header>
@@ -47,15 +48,15 @@
                         Como seu próprio nome já denota, a obra possui como principal objetivo a imersão, tanto em seus personagens e seus dilemas quanto no próprio universo em que a estória se passa, “adentrando” nas diferentes sociedades, culturas, políticas, locais e fantasias apresentadas.
                         </p>
                         <p style="text-align: justify;">
-                        ADENTRO é uma trama de mistério, ação e aventura da qual se desenrola em um universo único, recheado de elementos de fantasia e ficção científica. 
-                        Como seu próprio nome já denota, a obra possui como principal objetivo a imersão, tanto em seus personagens e seus dilemas quanto no próprio universo em que a estória se passa, “adentrando” nas diferentes sociedades, culturas, políticas, locais e fantasias apresentadas.
+                        A criação de seu universo é fruto de quase uma década de consumo das mais diferentes obras do entreterimento, como livros, séries, filmes e histórias em quadrinhos. 
+                        Sua temática é resultado da hibridez de conceitos steampunk, medieval, e fantástico, tendo fortes inspirações nas doutrinas espirituais e filosóficas do budismo e formas de pensamento humanistas e antropocentristas.
                         </p>
                         <div class = "cp_buttons-desktop_inside">
                             <div class = "cpd_button_1">
-                                <button><a href="">Fliptru</a></button>
+                                <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
                             </div>
                             <div class = "cpd_button_2">
-                                <button><a href="">Tapas</a></button>
+                                <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
                             </div>
                         </div>
 
@@ -67,19 +68,19 @@
                 </div>
                 <div class = "cp_buttons-mobile">
                     <div class = "cpm_button_1">
-                        <button><a href="">Fliptru</a></button>
+                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
                     </div>
                     <div class = "cpm_button_2">
-                        <button><a href="">Tapas</a></button>
+                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
                     </div>
                 </div>
 
                 <div class = "cp_buttons-desktop_external">
                     <div class = "cpd_button_1">
-                        <button><a href="">Fliptru</a></button>
+                        <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" width="200px" alt=""></a>
                     </div>
                     <div class = "cpd_button_2">
-                        <button><a href="">Tapas</a></button>
+                        <a href="https://tapas.io/series/adentro" class = "icon_link" target="blank"><img src="display/img/icones/tapas.svg" width="200px" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -95,6 +96,7 @@
 
         <section class = "section_slideshow">
             <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_ARTBOOK.svg" width="250px" alt=""></h2>
+            <p style="text-align: center; color: #fff;">Ilustrações, esboços e conceitos da ADENTRO</p>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -126,13 +128,13 @@
                 </div>
                 <div class = "sa_author-text">
                     <h2 class = "section_tittle">Fernanda Moreira</h2>
-                    <p style="color: #fff; text-align: justify;">
-                        Me chamo Fernanda Moreira (mais conhecida como Fê ou fersoureira), tenho 19 anos e sou gaúcha, natural de Pelotas. Pratico desenho diariamente há cerca de 7 anos e, com 16 anos, comecei a trabalhar mais profissionalmente na área. 
-                        Neste meio tempo, sempre que lia ou assistia alguma obra da qual gostava muito, criava artigos sobre algum conceito ou cena a qual me viesse à mente, criando, assim, a ADENTRO aos poucos em formatos de pequenos (mas incontáveis) artigos que ia guardando na gaveta. 
-                        Com o passar do tempo, tal obra foi se tornando cada vez mais concreta e recheada das mais diversas ideias que via por aí e em todos os âmbitos: criação de espécie, política, economia, cultura, língua, analogias, metáforas, geografia, dentre outros e, em paralelo, enredos, tramas, subtramas, personagens e mais e mais contextos.
-                        Em dezembro de 2019, tomei coragem para dar a forma final a esta obra que a tanto tempo me acompanhava. Dei início aos meus estudos relacionados a quadrinhos e sua narrativa, fazendo os primeiros protótipos das páginas da ADENTRO; um prólogo, tudo sendo compartilhado constantemente nas redes sociais. 
-                        Aos poucos fui conhecendo mais sobre o mundo dos quadrinhos, me enturmando e recebendo os mais diversos feedbacks, oque me inspirou muito a continuar com esta obra da qual amo intensamente. Em um período de seis meses, consegui publicar de forma online e gratuita o CAPÍTULO I – MÃO DE CALOS referente à obra. 
-                        Por mais que tenha sido algo bem experimental e inconstante, foi muito bem recebido pela comunidade de quadrinhos e o feedback que recebi só me motivou ainda mais a aprender e aumentar a qualidade de execução da ADENTRO.
+                    <p style="color: #fff; text-align: center;">
+                    Me chamo Fernanda Moreira (mais conhecida como Fê ou fersoureira), tenho 19 anos e sou gaúcha, natural de Pelotas. 
+                    Pratico desenho diariamente a cerca de 7 anos e, com 16 anos, comecei a trabalhar mais profissionalmente na área. Neste meio tempo, sempre que lia ou assistia alguma obra da qual gostava muito, criava artigos sobre algum conceito ou cena da qual me viesse à mente, criando, assim, a ADENTRO aos poucos em formatos de pequenos (mas incontáveis) artigos que ia guardando na gaveta. 
+                    Com o passar do tempo, tal obra foi se tornando cada vez mais concreta e recheada das mais diversas ideias que via por aí e em todos os âmbitos: criação de espécie, política, economia, cultura, língua, analogias, metáforas, geografia, dentre outros e, em paralelo, enredos, tramas, subtramas, personagens e mais e mais contextos.
+                    Em dezembro de 2019, tomei coragem para dar a forma final a esta obra que a tanto tempo me acompanhava. 
+                    Dei início aos meus estudos relacionados a quadrinhos e sua narrativa, fazendo os primeiros protótipos das páginas da ADENTRO, um prólogo, tudo sendo compartilhado constantemente nas redes sociais. Em um período de seis meses, consegui publicar de forma online e gratuita o CAPÍTULO I – MÃO DE CALOS referente a obra. 
+                    Por mais que tenha sido algo bem experimental e inconstante, foi muito bem-vindo a comunidade de quadrinhos e o feedback que recebi só me motivou ainda mais a aprender cada vez mais e aumentar a qualidade de execução da ADENTRO.
                     </p>      
                 </div>
             </div>
@@ -145,7 +147,7 @@
                 Além de deixar seu feedback, você pode ajudar a ADENTRO a continuar doando algum valor no APOIA-SE ou via PAYPAL! 
                 Isto é muito importante para o autor conseguir se dedicar mais a execução da obra, reduzindo seus hiatos e acelerando sua produção!
                 </p>
-                <button style="margin-bottom: 10px"><a href="">Paypal</a></button>
+                <a href=""><img src="display/img/icones/apoie-se.svg" width="250px" alt=""></a>
             </div>
             <div class = "sd_social-media" style="margin-top: 50px;">
                 <h2 class = "section_tittle">Minhas redes sociais</h2>
@@ -165,5 +167,16 @@
 </body>
 
     <script src="display/css/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script>
+
+        function logo_effect(){
+
+            $(document).ready(function(){
+                $(".tittle_logo").fadeIn(1500, function(){ $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}); });
+                        
+            });
+        }
+
+    </script>
 
 </html>

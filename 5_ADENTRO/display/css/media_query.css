@@ -1,7 +1,6 @@
 @media (max-width:450px){
-    button{
-        width: 110px;
-    }
+    
+
 }
 
 @media (min-width: 750px){
@@ -15,7 +14,7 @@
 @media (min-width: 750px) and (max-width: 1200px){
 
     .section_tittle img{
-        width: 300px;
+        width: 350px;
     }
 
 
@@ -45,23 +44,24 @@
     }
 
     .cpd_button_1{
-        margin-right: 2%;
+        margin-right: 20px;
     }
     
     .cpd_button_2{
-        margin-left: 2%;
+        margin-left: 20px;
     }
 
     .comic_presentation h2{
         text-align: left;
     }
 
-    .sa_main{
+    /*.sa_main{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: none;
         grid-gap: 15px;
     }
+    */
 
     .logo_img{
         width: 850px;
@@ -71,7 +71,7 @@
 @media (min-width:1200px){
 
     .section_tittle img{
-        width: 300px;
+        width: 350px;
     }
 
 
@@ -93,30 +93,31 @@
     }
 
     .cp_buttons-desktop_inside{
-        margin-top: 15px;
+        margin-top: 50px;
         display: flex;
         justify-content: center;
         grid-column: span 2; /* a célula ocupa duas colunas*/
     }
 
     .cpd_button_1{
-        margin-right: 2%;
+        margin-right: 20px;
     }
     
     .cpd_button_2{
-        margin-left: 2%;
+        margin-left: 20px;
     }
 
     .comic_presentation h2{
         text-align: left;
     }
 
-    .sa_main{
+    /*.sa_main{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: none;
         grid-gap: 15px;
     }
+    */
 
     .logo_img{
         width: 850px;

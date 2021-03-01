@@ -1,80 +1,50 @@
-@media (max-width: 750px){
-    .icon_link img{
-        width: 110px;
-    }
-}
-
 @media (min-width: 750px){
-
     #text-sinopse{
         text-align: justify;
     }
 
+    .section_trailer{
+        width: 70%;
+    }
+
 }
 
-@media (min-width: 750px) and (max-width: 1200px){
+@media (max-width: 940px){
+    .sd_image{
+        display: none;
+    }
+
+    .sd_content{
+        grid-template-columns: none;
+    }
+}
+
+@media (min-width: 870px) and (max-width: 1478px){
 
     .section_tittle img{
         width: 350px;
     }
 
-
-    .cp_buttons-mobile{
-        display: none;
-    }
-
     .cp_text{
-        display: grid;
-        grid-template-rows: 450px 100px;
+        height: 450px;
         overflow: scroll;
     }
 
     .cp_container{
-        /* Cria-se uma grade de duas colunas e 2 linhas*/
-        /*A primeira linha contém o texto e a imagem, e a segunda contém os botões*/
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto; 
-    }
-
-    .cp_buttons-desktop_external{
-        display: flex;
-        justify-content: center;
-        grid-column: span 2; /* a célula ocupa duas colunas*/
-    }
-
-    .cpd_button_1{
-        margin-right: 20px;
-    }
-    
-    .cpd_button_2{
-        margin-left: 20px;
+        grid-template-columns: 1fr 1fr ;
     }
 
     .comic_presentation h2{
         text-align: left;
     }
 
-    .icon_link img{
-        width: 150px;
-    }
-
 }
 
-@media (min-width:1200px){
+@media (min-width:1478px){
 
     .section_tittle img{
         width: 350px;
-    }
-
-
-    .cp_buttons-mobile{
-        display: none;
-    }
-
-    .cp_text{
-        display: grid;
-        grid-template-rows: 450px 100px;
     }
 
     .cp_container{
@@ -82,30 +52,11 @@
         /*A primeira linha contém o texto e a imagem, e a segunda contém os botões*/
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto; 
-    }
-
-    .cp_buttons-desktop_inside{
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        grid-column: span 2; /* a célula ocupa duas colunas*/
-    }
-
-    .cpd_button_1{
-        margin-right: 20px;
-    }
-    
-    .cpd_button_2{
-        margin-left: 20px;
+        grid-template-rows: none; 
     }
 
     .comic_presentation h2{
         text-align: left;
-    }
-
-    .icon_link img{
-        width: 200px;
     }
 
 }

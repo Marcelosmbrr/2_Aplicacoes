@@ -23,10 +23,10 @@
 header{
     width: 100%;
     height: 900px;
-    background: url(../img/Artes/background.png);
+    background: url(../img/imagem_teste.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center right;
+    background-position: center;
     background-size: cover;
     box-shadow: inset -2px -40px 37px 8px rgba(0,0,0,0.75);
 }
@@ -66,7 +66,7 @@ main{
 
 section{
     margin: 110px auto;
-    width: 90%;
+    width: 70%;
 }
 
 .section_tittle{
@@ -76,15 +76,20 @@ section{
 }
 
 /*SECTION 1* - COMIC*/
+.section_trailer{
+    width: 90%;
+}
+
 .cp_container{
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr auto 100px;
+    grid-template-rows: 1fr auto;
     grid-gap: 15px;
 }
 
 .cp_text{
     color: #fff;
+    height: 100%;
 }
 
 #text-sinopse{
@@ -92,18 +97,23 @@ section{
     font-style: italic;
 }
 
-.cp_buttons-desktop_inside{
-    display: none;
+.cp_image{
+    height: auto;
 }
 
-.cp_buttons-desktop_external{
-    margin-top: 50px;
-    display: none;
+.icon_link img{
+    width: 100px;
 }
 
-.cp_buttons-mobile{
+/*SECTION 2 - TRAILER*/
+.cp_buttons{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+}
+
+.cpb_div{
+    display: flex;
+    justify-content: center;
 }
 
 .cpm_button_1{
@@ -118,15 +128,9 @@ section{
     margin-left: 15px;
 }
 
-.cp_image{
-    height: auto;
-}
-
 .icon_link img{
     width: 100px;
 }
-
-/*SECTION 2 - TRAILER*/
 
 /*SECTION 3 - SLIDESHOW*/
 
@@ -136,11 +140,10 @@ section{
     grid-template-rows: 100px 1fr;
 }
 
-.sa_main{
+.sa_content{
     display: grid;
     grid-template-rows: 250px 1fr;
     grid-gap: 15px;
-    margin-top: 50px;
 }
 
 .sa_author-photo{
@@ -170,6 +173,16 @@ section{
 .sd_text{
     text-align: center;
 }
+
+.sd_image{
+    /* TEMP*/
+    display: none;
+}
+
+.sd_image img{
+    max-width: 450px;
+}
+
 
 /* FOOTER*******************************************/
 footer{

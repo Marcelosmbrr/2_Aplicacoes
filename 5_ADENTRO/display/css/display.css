@@ -40,14 +40,10 @@ header{
     align-items: flex-end;
 }
 
-.header_tittle{
+.header_title{
     width: 100%;
     text-align: center;
     padding-bottom: 50px;
-}
-
-.tittle_logo{
-    visibility: hidden;
 }
 
 .header_subtittle{
@@ -68,7 +64,7 @@ section{
     width: 70%;
 }
 
-.section_tittle{
+.section_title{
     text-align: center;
     font-size: 2em;
 }

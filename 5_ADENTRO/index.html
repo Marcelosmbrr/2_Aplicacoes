@@ -19,12 +19,12 @@
     <script src="jquery/jquery-3.5.1.js"></script>
     <title>ADENTRO</title>
 </head>
-<body onload="logo_effect()">
+<body>
 
     <header>
         <div class = "header_filter">
-            <div class = "header_tittle">
-                <h1 class = "tittle_logo"><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" alt="Logo"></h1>
+            <div class = "header_title">
+                <h1 class = "title_logo"><img class = "logo_img" src="display/img/titulos/TITLE_LOGO_SHADOW.svg" alt="Logo"></h1>
                 <h4 class = "header_subtittle" style="font-style: italic; ">Um universo fantástico, único e recheado de mistérios</h4>
             </div>
         </div>
@@ -33,7 +33,7 @@
     <main>
 
         <section class = "comic_presentation">
-            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_A_WEBCOMIC.svg" width="250px" alt="A WEBCOMIC"></h2>
+            <h2 class = "section_title"><img src="display/img/titulos/TITLE_A_WEBCOMIC.svg" width="250px" alt="A WEBCOMIC"></h2>
             <div class = "cp_container">
                 <div class = "cp_text">
                     <div class = "cp_paragrafos" style="padding: 10px;">
@@ -61,14 +61,14 @@
         </section>
 
         <section class = "section_trailer">
-            <h2 class = "section_tittle" style="font-size: 1.2em;">CONFIRA O TRAILER DO ÚLTIMO CAPÍTULO!</h2>
+            <h2 class = "section_title" style="font-size: 1.5em;">CONFIRA O TRAILER DO ÚLTIMO CAPÍTULO!</h2>
             <video width="100%" height="25%" controls>
                 <source src="display/mp4/video.mp4" type="video/mp4">
             </video>
             
             <!-- BOTÕES -->
             <div class = "cp_buttons">
-                <h2 class = "cp_buttons_title" style="text-align: center; margin-bottom: 20px; font-size: 1.2em;">Leia já, online e gratuitamente!</h2>
+                <h2 class = "cp_buttons_title" style="text-align: center; margin-bottom: 20px; font-size: 1.5em;">Leia já, online e gratuitamente!</h2>
                 <div class = "cpb_div">
                     <div class = "cpm_button_1">
                         <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" alt="" width="100px"></a>
@@ -82,7 +82,7 @@
         </section>
 
         <section class = "section_slideshow">
-            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_ARTBOOK.svg" width="250px" alt=""></h2>
+            <h2 class = "section_title"><img src="display/img/titulos/TITLE_ARTBOOK.svg" width="250px" alt=""></h2>
             <p style="text-align: center;">Ilustrações, esboços e conceitos da ADENTRO</p>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -108,8 +108,8 @@
         </section>
 
         <section class = "section_author">
-            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_A_AUTORA.svg" width="250px" alt=""></h2>
-            <div class = "sa_content">
+            <h2 class = "section_title"><img src="display/img/titulos/TITLE_A_AUTORA.svg" width="250px" alt=""></h2>
+            <div class = "sa_content" style="margin-top: 10px;">
                 <div class = "sa_author-photo">
                     <img class = "author_photo" src="display/img/foto_autora/foto2.png" alt="autora" width="250px" height="250px">           
                 </div>
@@ -128,7 +128,7 @@
         </section>
 
         <section class = "section_donation">
-            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_AJUDE_A_ADENTRO_A_CRESCER.svg" width="100%" alt=""></h2>
+            <h2 class = "section_title"><img src="display/img/titulos/TITLE_AJUDE_A_ADENTRO_A_CRESCER.svg" width="250px" alt=""></h2>
             <div class = "sd_content">
                 <div class = "sd_text">
                     <p>
@@ -141,7 +141,7 @@
             </div>
             
             <div class = "sd_social-media" style="margin-top: 50px; margin-bottom: 10px; font-size: 0.9em;">
-                <h3 class = "section_tittle">Minhas redes sociais</h3>
+                <h3 class = "section_title">Minhas redes sociais</h3>
                 <a href="https://instagram.com/fersoureira" target="blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://facebook.com/fersoureira" target="blank"><i class="fab fa-facebook-square"></i></a>
                 <a href="https://twitter.com/fersoureira" target="blank"><i class="fab fa-twitter-square"></i></a>
@@ -161,20 +161,12 @@
     <script src="display/css/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
     <script>
         
-        function logo_effect(){
-
-            $(document).ready(function(){
-
-                $(".tittle_logo").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 1000);
-
-                setTimeout(function(){
-                    $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 2000); 
-                });
-                        
-            });
-        }
+        $(document).ready(function(){
+            setTimeout(function(){
+                $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000); 
+            });           
+        });
         
-
     </script>
 
 </html>

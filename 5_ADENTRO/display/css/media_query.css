@@ -1,3 +1,10 @@
+@media (max-width: 550px){
+    section{
+        width: 90%;
+    }
+}
+
+
 @media (min-width: 750px){
     #text-sinopse{
         text-align: justify;
@@ -7,16 +14,6 @@
         width: 70%;
     }
 
-}
-
-@media (max-width: 940px){
-    .sd_image{
-        display: none;
-    }
-
-    .sd_content{
-        grid-template-columns: none;
-    }
 }
 
 @media (min-width: 870px) and (max-width: 1478px){

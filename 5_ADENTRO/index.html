@@ -57,9 +57,7 @@
                 <div class = "cp_image">
                     <img src="display/img/Artes/comic_descript.png" width = "100%" alt="">
                 </div>
-
             </div>
-
         </section>
 
         <section class = "section_trailer">
@@ -70,7 +68,7 @@
             
             <!-- BOTÕES -->
             <div class = "cp_buttons">
-                <h2 class = "cp_buttons_title" style="color: #fff; text-align: center; margin-bottom: 20px; font-size: 1.2em;">Leia já, online e gratuitamente!</h2>
+                <h2 class = "cp_buttons_title" style="text-align: center; margin-bottom: 20px; font-size: 1.2em;">Leia já, online e gratuitamente!</h2>
                 <div class = "cpb_div">
                     <div class = "cpm_button_1">
                         <a href="https://fliptru.com.br/comic/adentro" class = "icon_link" target="blank"><img src="display/img/icones/fliptru.svg" alt="" width="100px"></a>
@@ -85,7 +83,7 @@
 
         <section class = "section_slideshow">
             <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_ARTBOOK.svg" width="250px" alt=""></h2>
-            <p style="text-align: center; color: #fff;">Ilustrações, esboços e conceitos da ADENTRO</p>
+            <p style="text-align: center;">Ilustrações, esboços e conceitos da ADENTRO</p>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -117,7 +115,7 @@
                 </div>
                 <div class = "sa_author-text">
                     <h2 class = "section_tittle">Fernanda Moreira</h2>
-                    <p style="color: #fff; text-align: center;">
+                    <p style="text-align: center;">
                     Me chamo Fernanda Moreira (mais conhecida como Fê ou fersoureira), tenho 19 anos e sou gaúcha, natural de Pelotas. 
                     Pratico desenho diariamente a cerca de 7 anos e, com 16 anos, comecei a trabalhar mais profissionalmente na área. Neste meio tempo, sempre que lia ou assistia alguma obra da qual gostava muito, criava artigos sobre algum conceito ou cena da qual me viesse à mente, criando, assim, a ADENTRO aos poucos em formatos de pequenos (mas incontáveis) artigos que ia guardando na gaveta. 
                     Com o passar do tempo, tal obra foi se tornando cada vez mais concreta e recheada das mais diversas ideias que via por aí e em todos os âmbitos: criação de espécie, política, economia, cultura, língua, analogias, metáforas, geografia, dentre outros e, em paralelo, enredos, tramas, subtramas, personagens e mais e mais contextos.
@@ -130,18 +128,15 @@
         </section>
 
         <section class = "section_donation">
-            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_AJUDE_A_ADENTRO_A_CRESCER.svg" width="250px" alt=""></h2>
+            <h2 class = "section_tittle"><img src="display/img/titulos/TITLE_AJUDE_A_ADENTRO_A_CRESCER.svg" width="100%" alt=""></h2>
             <div class = "sd_content">
                 <div class = "sd_text">
-                    <p style= "color: #fff;">
+                    <p>
                     Além de deixar seu feedback, você pode ajudar a ADENTRO a continuar doando algum valor no APOIA-SE ou via PAYPAL! 
                     Isto é muito importante para o autor conseguir se dedicar mais à execução da obra, reduzindo seus hiatos e acelerando sua produção!
                     </p>
-                    <a href=""><img src="display/img/icones/apoie-se.svg" width="150px" alt=""></a>
-                    <a href=""><img src="display/img/icones/paypal.svg" width="150px" alt=""></a>
-                </div>
-                <div class = "sd_image">
-                    <img src="display/img/donate-image.png" width="450px" alt="">
+                    <a href="" target="blank"><img src="display/img/icones/apoie-se.svg" width="150px" alt="" class = "apoiase_btn"></a>
+                    <a href="" target="blank"><img src="display/img/icones/paypal.svg" width="150px" alt="" class = "paypal_btn"></a>
                 </div>
             </div>
             
@@ -152,7 +147,7 @@
                 <a href="https://twitter.com/fersoureira" target="blank"><i class="fab fa-twitter-square"></i></a>
                 <a href="https://www.youtube.com/channel/UCvdy0R7zZYw-NzUXdW3ieFg" target="blank"><i class="fab fa-youtube"></i></a>
             </div>
-            <p style="color: #fff;text-align: center; font-style: italic;">Assim, caminhamos!</p>
+            <p style="text-align: center; font-style: italic;">Assim, caminhamos!</p>
 
         </section>
     </main>
@@ -170,10 +165,10 @@
 
             $(document).ready(function(){
 
-                $(".tittle_logo").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 3000);
+                $(".tittle_logo").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 1000);
 
                 setTimeout(function(){
-                    $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000); 
+                    $(".header_subtittle").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 2000); 
                 });
                         
             });

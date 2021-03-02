@@ -43,7 +43,6 @@ header{
 .header_tittle{
     width: 100%;
     text-align: center;
-    color: #fff;
     padding-bottom: 50px;
 }
 
@@ -71,7 +70,6 @@ section{
 
 .section_tittle{
     text-align: center;
-    color: #fff;
     font-size: 2em;
 }
 
@@ -88,7 +86,6 @@ section{
 }
 
 .cp_text{
-    color: #fff;
     height: 100%;
 }
 
@@ -160,34 +157,30 @@ section{
 }
 
 /*SECTION 4 - APOIE*/
+.sd_text{
+    text-align: center;
+}
+
+.apoiase_btn{
+    margin-right: 5px;
+}
+
+.paypal_btn{
+    margin-left: 5px;
+}
+
 .sd_social-media{
     text-align: center;
 }
 
 .sd_social-media i{
-    color: #fff;
     font-size: 1.5em;
     margin: 5px;
 }
-
-.sd_text{
-    text-align: center;
-}
-
-.sd_image{
-    /* TEMP*/
-    display: none;
-}
-
-.sd_image img{
-    max-width: 450px;
-}
-
 
 /* FOOTER*******************************************/
 footer{
     width: 100%;
     height: 50px;
     text-align: center;
-    color: #fff;
 }

@@ -8,6 +8,11 @@
 body{
     background: black;
     font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+i{
+    color: #fff;
 }
 
 ul, ol, a{

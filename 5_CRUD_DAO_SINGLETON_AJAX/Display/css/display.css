@@ -1,0 +1,98 @@
+header{
+    background: #333;
+    height: 80px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: -2px 9px 15px 0px rgba(0,0,0,0.68);
+}
+
+.fa-database{
+    transition: all 1s;
+}
+
+.fa-database:hover{
+    transform:rotate(360deg);
+}
+
+main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+/* CONTAINER ADICIONAR PESSOA*/
+
+.main_form-side{
+   display: grid;
+   grid-template-rows: auto auto;
+   justify-content: end;
+}
+
+.form_header{
+    height: max-content;
+    width: 300px;
+    padding-top: 8px;
+    margin-top: 100px;
+    text-align: center;
+    background: #333;
+}
+
+
+.form_body{
+    width: 300px;
+    height: max-content;
+    padding: 10px;
+    border: 1px solid #333;
+    display: none;
+}
+
+/*CONTAINER TABELA*/
+
+.main_table-side{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100px auto;
+}
+
+.alert_row{
+    margin: auto auto;
+}
+
+.alert-danger{
+    height: min-content;
+    margin: auto auto;
+}
+
+table{
+    border: 1px solid #333;
+}
+
+th, td{
+    text-align: center;
+}
+
+thead tr{
+    background: #333;
+    color: #dd8a00;
+}
+
+/*CONTAINER DELETAR PESSOA*/
+
+.main_delete-side{
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+/* CONTAINER DE UPDATE*/
+.update_form{
+    padding: 10px;
+    border: 1px solid #333;
+    position: fixed;
+    bottom: 100px;
+    left: 42%;
+    display: none;
+    background: whitesmoke;
+}

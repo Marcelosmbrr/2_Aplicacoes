@@ -1,0 +1,85 @@
+/* RESET */
+*{
+    font-family: verdana;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+
+h1,h2,h3{
+    font-family: verdana;
+}
+
+ul, ol, a{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: #333;
+}
+
+/* HEADER*/
+header{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: whitesmoke;
+}
+
+h1 img{
+    border-radius: 10px;
+}
+
+.ul_menu{
+    display: flex;
+}
+
+.ul_menu li a{
+    color: #333;
+    display: block;
+    padding: 10px;
+}
+
+li a:hover{
+    color: #6082bb;
+}
+
+/* MAIN */
+main{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.main_center-column{
+    padding: 50px;
+}
+
+.registro_container, .update-delete-container{
+    margin: 50px auto;
+    padding: 15px;
+    width: max-content;
+    height: max-content;
+}
+
+.registro_container, .update-delete-container form{
+    color: #fff;
+}
+
+.alert_msg_reg, .alert_msg_up-del{
+    margin: 0 auto;
+    width: max-content;
+}
+
+/* Coluna central (da tabela) */
+td, th{
+    color: #fff;
+    text-align: center;
+}
+
+

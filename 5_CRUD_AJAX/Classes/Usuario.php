@@ -6,7 +6,7 @@
 
         public function __construct(){
 
-            $this->pdo = new PDO("mysql:host=localhost;dbname=database_tarefa", "root", "root"); 
+            $this->pdo = new PDO("mysql:host=localhost;dbname=crud_ajax", "root", ""); 
 
         }
 

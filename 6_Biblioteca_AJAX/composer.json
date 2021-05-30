@@ -1,0 +1,13 @@
+{
+    "name": "lcmar/proj_biblioteca",
+    "description": "Tarefa Faculdade",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "Classes\\": "classes/",
+            "Instances\\": "instances/"
+        }
+    }
+}

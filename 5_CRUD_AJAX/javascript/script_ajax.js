@@ -164,8 +164,6 @@
 
             if(statusTxt == "success"){
 
-                //console.log("Formulário carregado com sucesso!");
-
                 //Agora vou recuperar cada input do formulário de edição e atribuir o valor respectivo de cada td
                 campo_id = document.getElementById("id_input").value = vetor_tds[0].innerHTML;
                 campo_nome = document.getElementById("nome_edit_input").value = vetor_tds[1].innerHTML;

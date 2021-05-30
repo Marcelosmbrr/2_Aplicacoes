@@ -1,0 +1,62 @@
+h1{
+    font-size: 5em;
+    transition: all 2s;
+}
+
+h1:hover{
+    transform: scale(1.1);
+}
+
+h1,h2,h3{
+    color: #fff;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+header{
+    width: 100%;
+    height: 300px;
+
+    /* background config*/
+    background: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 7px 13px -1px rgba(0,0,0,0.59);
+}
+
+.filter{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.90);
+}
+
+main{
+    width: 100%;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    width: 70%;
+    margin-bottom: 50px;
+}
+
+.tb-forms_section{
+    width: 60%;
+    background-color: whitesmoke;
+}
+
+#modal_form{
+    display: none;
+    position: fixed;
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+}

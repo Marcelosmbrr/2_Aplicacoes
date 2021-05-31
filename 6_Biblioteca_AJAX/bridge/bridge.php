@@ -100,22 +100,58 @@
 
     }
 
-    //CADASTRAR NOVO LIVRO 
-    if(isset($_POST['new_book'])){
+    //GERAR FORMULÁRIO PARA CADASTRAR NOVO LIVRO 
+    if(isset($_POST['book_new_form'])){
 
-        if(!empty($_POST['new_book'])){
-            print_r($_POST['new_book']); die();
-            
-             $title = $_POST['new_book']['s_tittle'];
-             $author = $_POST['new_book']['s_author'];
-             $area = $_POST['new_book']['s_area'];
+        if(!empty($_POST['book_new_form']) &&  $_POST['book_new_form'] == "new_book"){
+            //echo $_POST['book_new_form']; die();
+
+            $type_form = $_POST['book_new_form'];
  
              //Instanciação da classe controller
              $obj = instance_controller::getInstance();
  
-             $register = $obj->newBook($title,$author,$area);
+             $form_book = $obj->loadForm($type_form);
  
-             echo json_encode($register);
+             echo json_encode($form_book);
+ 
+         }
+
+
+    }
+
+    //GERAR FORMULÁRIO PARA CADASTRAR NOVO LIVRO 
+    if(isset($_POST['book_edit_form'])){
+
+        if(!empty($_POST['book_edit_form']) && $_POST['book_edit_form'] == "edit_book"){
+            
+            $type_form = $_POST['book_edit_form'];
+ 
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+ 
+            $form_book = $obj->loadForm($type_form);
+ 
+            echo json_encode($form_book);
+ 
+         }
+
+
+    }
+
+    //GERAR FORMULÁRIO PARA REALIZAR EMPRÉSTIMO
+    if(isset($_POST['book_loan_form'])){
+
+        if(!empty($_POST['book_loan_form']) && $_POST['book_loan_form'] == "loan_book"){
+            
+            $type_form = $_POST['book_loan_form'];
+ 
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+ 
+            $form_book = $obj->loadForm($type_form);
+ 
+            echo json_encode($form_book);
  
          }
 

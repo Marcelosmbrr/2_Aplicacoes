@@ -116,7 +116,7 @@
         //Método para construir o formulário de registro, de livro ou aluno
         public function loadForm($type){
 
-            if($type == "book"){
+            if($type == "new_book"){
 
                 $model_obj = instance_model::getInstance();
 
@@ -132,14 +132,37 @@
 
                 
 
-            }else if($type == "student"){
+            }else if($type == "edit_book"){
+
+                $model_obj = instance_model::getInstance();
+
+                //Irá receber um array associativo da tabela áreas
+                $data = $model_obj->getAreas(NULL, NULL);
+                //print_r($data); die();
 
                 //Neste caso, o formulário será apenas construído
                 //Pois não depende de dados do banco
-                $form = $this->constructForm($type);
+                $form = $this->constructForm($type,$data);
 
                 //Retorna o formulário em formato string
                 return $form;
+
+            }else if($type == "loan_book"){
+
+                $model_obj = instance_model::getInstance();
+
+                //Irá receber um array associativo da tabela áreas
+                $data = $model_obj->getStudents(NULL, NULL);
+                //print_r($data); die();
+
+                //Neste caso, o formulário será apenas construído
+                //Pois não depende de dados do banco
+                $form = $this->constructForm($type,$data);
+
+                //Retorna o formulário em formato string
+                return $form;
+
+                
             }
 
 
@@ -198,13 +221,13 @@
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
                             <button type='button' class='btn btn-warning btn_edit r-{$value['id']}' onclick = 'updateBook(this)'> Editar </button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteRecord(this)'> Excluir </button>
+                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteBook(this)'> Excluir </button>
                         </td>";
 
                         if($value['status'] == "0"){
 
                                 $table .= "<td>
-                                <button type='button' class='btn btn-warning btn_loan r-{$value['id']}' > Emprestar </button>
+                                <button type='button' class='btn btn-warning btn_loan r-{$value['id']}' onclick = 'bookLoan(this)'> Emprestar </button>
                             </td>";
 
                         }else if($value['status'] == "1"){
@@ -266,7 +289,7 @@
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
                             <button type='button' class='btn btn-warning btn_edit r-{$value['id']}' onclick = 'updateArea(this)'>Editar</button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteRecord(this)'>Excluir</button>
+                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteArea(this)'>Excluir</button>
                         </td>";
 
                         //Abre uma linha
@@ -322,7 +345,7 @@
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
                             <button type='button' class='btn btn-warning btn_edit r-{$value['matricula']}' onclick = 'updateStudent(this)'>Editar</button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['matricula']}' onclick = 'deleteRecord(this)'>Excluir</button>
+                            <button type='button' class='btn btn-danger btn_delete r-{$value['matricula']}' onclick = 'deleteStudent(this)'>Excluir</button>
                         </td>";
 
                         //Fecha a linha atual
@@ -388,6 +411,141 @@
 
             //Retorna a tabela construída, em formato string
             return $table;
+
+        }
+
+        //Método para construção de formulários
+        public function constructForm($type, $data){
+            //print_r($data); die();
+
+            switch($type){
+
+                case "new_book":
+                    
+                    $form = "<form class = 'form-book_register'>
+                    <div class='mb-3'>
+                        <h3>Cadastrar novo livro</h3>
+                        <label for='title-book_input' class='form-label'>Título</label>
+                        <input type='text' class='form-control' id='title-book-new_input' style = 'background: lightgray; box-shadow: none; border: none;'>
+                        <label for='author-book_input' class='form-label'>Autor</label>
+                        <input type='text' class='form-control' id='author-book-new_input' style = 'background: lightgray; box-shadow: none; border: none;'>
+                        <label for='area-book_input' class='form-label'>Área</label>
+                        <select class='form-select' aria-label='Default select example' name='area_select' id='area_select'>
+                        <option value = ''>Selecione</option>";
+
+                        //Percorrer o array de dados //$key é a linha, e $value é o array do registro
+                        for($linha = 0; $linha < count($data); $linha++){
+
+                            foreach($data[$linha] as $key => $value){
+
+                                if($key == "id"){
+
+                                    $form .= "<option value='$value'>";
+
+                                }else{
+
+                                    $form .= "$value</option>";
+
+                                }
+
+                            }
+                        }
+
+                        $form .= "
+                        </select>
+                        </div>
+                        <button type='submit' class='btn btn-primary' id = 'btn_register_book'>Cadastrar</button>
+                        <button class='btn btn-primary btn_close'>Cancelar</button>
+                    </form>";
+                    
+                break;
+
+                case "edit_book":
+                    
+                    $form = "<form class = 'form-book_register'>
+                    <div class='mb-3'>
+                        <h3>Editar registro do livro</h3>
+                        <label for='id-book_input' class='form-label'>ID do livro</label>
+                        <input type='text' class='form-control' id='id-book-edit_input' style = 'background: lightgray; box-shadow: none; border: none;' readonly>
+                        <label for='title-book_input' class='form-label'>Título</label>
+                        <input type='text' class='form-control' id='title-book-edit_input' style = 'background: lightgray; box-shadow: none; border: none;'>
+                        <label for='author-book_input' class='form-label'>Autor</label>
+                        <input type='text' class='form-control' id='author-book-edit_input' style = 'background: lightgray; box-shadow: none; border: none;'>
+                        <label for='area-book_input' class='form-label'>Área</label>
+                        <select class='form-select' aria-label='Default select example' name='area_select' id='area-book_input'>
+                        <option value = ''>Selecione</option>";
+
+                        //Percorrer o array de dados //$key é a linha, e $value é o array do registro
+                        for($linha = 0; $linha < count($data); $linha++){
+
+                            foreach($data[$linha] as $key => $value){
+
+                                if($key == "id"){
+
+                                    $form .= "<option value='$value'>";
+
+                                }else{
+
+                                    $form .= "$value</option>";
+
+                                }
+
+                            }
+                        }
+
+                        $form .= "
+                        </select>
+                        </div>
+                        <button type='submit' class='btn btn-primary' id = 'btn_register_book'>Cadastrar</button>
+                        <button class='btn btn-primary btn_close'>Cancelar</button>
+                    </form>";
+                    
+                break;
+
+                case "loan_book":
+
+                    $form = "<form class = 'form-student_register'>
+                    <div class='mb-3'>
+                        <h3>Realizar empréstimo</h3>
+                        <label for='book-title_loan_input' class='form-label'>ID livro</label>
+                        <input type='text' class='form-control' id='book-title_loan_input' style = 'background: lightgray; box-shadow: none; border: none;' readonly required>
+                        <label for='student-name_loan_input' class='form-label'>Aluno</label>
+                        <select class='form-select' aria-label='Default select example' name='student_select' id='student-loan_input'>
+                        <option value = ''>Selecione</option>";
+
+                    //Percorrer o array de dados //$key é a linha, e $value é o array do registro
+                    for($linha = 0; $linha < count($data); $linha++){
+
+                        foreach($data[$linha] as $key => $value){
+
+                            if($key == "matricula"){
+
+                                $form .= "<option value='$value'>";
+
+                            }else if($key == "nome"){
+
+                                $form .= "$value</option>";
+
+                            }
+
+                        }
+                    }
+
+                    $form .= "
+                    </select>
+                    <label for='book-date_loan_input' class='form-label'>Data de entrega</label>
+                    <input type='date' class='form-control' id='book-date_loan_input' style = 'background: lightgray; box-shadow: none; border: none;' required> 
+                    </div>
+                    <button type='submit' class='btn btn-primary' id = 'btn_register_loan'>Cadastrar</button>
+                    <button class='btn btn-primary btn_close'>Cancelar</button>
+                    </form>";
+
+                break;
+
+            }
+
+            //echo $form; die();
+            return $form;
 
         }
 

@@ -177,7 +177,7 @@
 
     /* GERAÇÃO DOS FORMULÁRIOS -----------------------------------------------------------------------*/
 
-    //FORMULÁRIO DE EDITAR LIVRO
+    //CRIA/GERA FORMULÁRIO DE EDITAR O LIVRO
     function updateBook(el){
         htdocs = window.location.origin;
 
@@ -186,7 +186,7 @@
 
         //Transformo o nome da classe em um array de caracteres, para recuperar o ID do registro
         split_class = class_reg.split(''); //["r", "-", "0"]
-        
+
         if(split_class.length > 3){
             reg_id = split_class[2] + split_class[3];
         }else{
@@ -197,22 +197,29 @@
         //Lembrando, os td de uma mesma tr possuem a mesma classe definida por r-$value['id']
         id_reg_fields = "r-" + reg_id;
         vetor_tds = document.getElementsByClassName(id_reg_fields);
-        //console.log(vetor_tds);
+        //console.log(reg_id, vetor_tds);
 
-        //Renderização do formulário de edição
-        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/update/edit_book.html", function(responseTxt, statusTxt, xhr){
+        $.ajax({
 
-            $("#modal_form").fadeIn(500);
+            url: htdocs+"/proj_biblioteca/bridge/bridge.php",
+            method: 'POST',
+            data: {book_edit_form: "edit_book"},
+            dataType: 'json', //Tratamento da resposta
+            beforeSend: function(){ console.log("Carregando formulário de edição de livro..."); } //Antes de enviar..
 
-            if(statusTxt == "success"){
+        }).done(function(form_edit_book){
 
-            //Recuperação dos valores de cada campo do registro da tabela HTML
-            campo_id = document.getElementById("id-book-edit_input").value = vetor_tds[0].innerHTML;
-            campo_titulo = document.getElementById("title-book-edit_input").value = vetor_tds[1].innerHTML;
-            campo_autor = document.getElementById("author-book-edit_input").value = vetor_tds[2].innerHTML;
-            campo_area = document.getElementById("area-book-edit_input").value = vetor_tds[4].innerHTML;
+            //O container é esvaziado para impedir sobreposição de conteúdo
+            $('#modal_form').empty();
 
-            }
+            //O formulário aparece
+            $("#modal_form").hide().html(form_edit_book).slideDown(1000);
+
+            //Recuperação dos valores DEFAULT da linha para o formulário de edição
+            id_book = document.getElementById("id-book-edit_input").value = vetor_tds[0].innerHTML;
+            title_book = document.getElementById("title-book-edit_input").value = vetor_tds[1].innerHTML;
+            author_book = document.getElementById("author-book-edit_input").value = vetor_tds[2].innerHTML;
+
 
         });
         
@@ -291,7 +298,8 @@
             if(statusTxt == "success"){
 
             //Recuperação dos valores de cada campo do registro da tabela HTML
-            campo_nome = document.getElementById("name-area-edit_input").value = vetor_tds[1].innerHTML;
+            campo_id = document.getElementById("id-edit-area_input").value = vetor_tds[0].innerHTML;
+            campo_nome = document.getElementById("name-area_input").value = vetor_tds[1].innerHTML;
 
             }
 
@@ -299,20 +307,31 @@
 
     }
 
-    //CRIA FORMULÁRIO DE CADASTRO DE LIVRO
+    //CRIA/GERA FORMULÁRIO DE CADASTRO DE LIVRO
     $(document).on("click", "#btn-new_book" ,function(){
-        htdocs = window.location.origin;
 
-        //Renderização do formulário de edição
-        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/insert/new_book.html", function(responseTxt, statusTxt, xhr){
+        $.ajax({
 
-            $("#modal_form").fadeIn(500);
+            url: htdocs+"/proj_biblioteca/bridge/bridge.php",
+            method: 'POST',
+            data: {book_new_form: "new_book"},
+            dataType: 'json', //Tratamento da resposta
+            beforeSend: function(){ console.log("Carregando formulário de registro de livro..."); } //Antes de enviar..
+
+        }).done(function(form_new_book){
+
+            //O container é esvaziado para impedir sobreposição de conteúdo
+            $('#modal_form').empty();
+
+            //O formulário aparece
+            $("#modal_form").hide().html(form_new_book).slideDown(1000);
+
 
         });
 
     });
 
-    //CRIA FORMULÁRIO DE CADASTRO DE ALUNO
+    //CRIA/GERA FORMULÁRIO DE CADASTRO DE ALUNO
     $(document).on("click", "#btn-new_student" ,function(){
         htdocs = window.location.origin;
 
@@ -324,8 +343,8 @@
 
     });
 
-    //FORMULÁRIO DE EXCLUIR LINHA
-    function deleteRecord(el){
+    //CRIA/GERA FORMULÁRIO DE EXCLUIR LIVRO
+    function deleteBook(el){
         htdocs = window.location.origin;
 
         //Recuperamos a última classe do elemento //Que é igual ao ID do registro na tabela
@@ -342,7 +361,7 @@
         //console.log(vetor_tds);
 
         //Renderização do formulário de edição
-        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/delete/delete_record.html", function(responseTxt, statusTxt, xhr){
+        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/delete/delete_book.html", function(responseTxt, statusTxt, xhr){
 
             $("#modal_form").fadeIn(500);
 
@@ -352,6 +371,119 @@
             campo_nome = document.getElementById("data-field_input").value = vetor_tds[0].innerHTML;
 
             }
+
+        });
+    }
+
+    //CRIA/GERA FORMULÁRIO DE EXCLUIR ALUNO
+    function deleteStudent(el){
+        htdocs = window.location.origin;
+
+        //Recuperamos a última classe do elemento //Que é igual ao ID do registro na tabela
+        class_reg = el.classList[3];
+
+        //Transformo o nome da classe em um array de caracteres, para recuperar o ID do registro
+        split_class = class_reg.split(''); //["r", "-", "0"]
+
+        if(split_class.length > 3){
+            reg_id = split_class[2] + split_class[3];
+        }else{
+            reg_id = split_class[2]; 
+        }
+
+        //Agora vou recuperar os table data da mesma linha a partir da classe 
+        //Lembrando, os td de uma mesma tr possuem a mesma classe definida por r-$value['id']
+        id_reg_fields = "r-" + reg_id;
+        vetor_tds = document.getElementsByClassName(id_reg_fields);
+
+        //Renderização do formulário de edição
+        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/delete/delete_student.html", function(responseTxt, statusTxt, xhr){
+
+            $("#modal_form").fadeIn(500);
+
+            if(statusTxt == "success"){
+
+            //Recuperação dos valores de cada campo do registro da tabela HTML
+            campo_nome = document.getElementById("data-field_input").value = vetor_tds[0].innerHTML;
+
+            }
+
+        });
+    }
+
+    //CRIA/GERA FORMULÁRIO DE EXCLUIR ÁREA
+    function deleteArea(el){
+        htdocs = window.location.origin;
+
+        //Recuperamos a última classe do elemento //Que é igual ao ID do registro na tabela
+        class_reg = el.classList[3];
+
+        //Transformo o nome da classe em um array de caracteres, para recuperar o ID do registro
+        split_class = class_reg.split(''); //["r", "-", "0"]
+        reg_id = split_class[2]; 
+
+        //Agora vou recuperar os table data da mesma linha a partir da classe 
+        //Lembrando, os td de uma mesma tr possuem a mesma classe definida por r-$value['id']
+        id_reg_fields = "r-" + reg_id;
+        vetor_tds = document.getElementsByClassName(id_reg_fields);
+        //console.log(vetor_tds);
+
+        //Renderização do formulário de edição
+        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/delete/delete_area.html", function(responseTxt, statusTxt, xhr){
+
+            $("#modal_form").fadeIn(500);
+
+            if(statusTxt == "success"){
+
+            //Recuperação dos valores de cada campo do registro da tabela HTML
+            campo_nome = document.getElementById("data-field_input").value = vetor_tds[0].innerHTML;
+
+            }
+
+        });
+    }
+
+    //CRIA/GERA FORMULÁRIO DE REALIZAR EMPRÉSTIMO DE LIVRO
+    function bookLoan(el){
+        htdocs = window.location.origin;
+
+        //Recuperamos a última classe do elemento //Que é igual ao ID do registro na tabela
+        class_reg = el.classList[3];
+
+        //Transformo o nome da classe em um array de caracteres, para recuperar o ID do registro
+        split_class = class_reg.split(''); //["r", "-", "0"]
+
+        if(split_class.length > 3){
+            reg_id = split_class[2] + split_class[3];
+        }else{
+            reg_id = split_class[2]; 
+        }
+
+        //Agora vou recuperar os table data da mesma linha a partir da classe 
+        //Lembrando, os td de uma mesma tr possuem a mesma classe definida por r-$value['id']
+        id_reg_fields = "r-" + reg_id;
+        vetor_tds = document.getElementsByClassName(id_reg_fields);
+        //console.log(reg_id, vetor_tds);
+
+        $.ajax({
+
+            url: htdocs+"/proj_biblioteca/bridge/bridge.php",
+            method: 'POST',
+            data: {book_loan_form: "loan_book"},
+            dataType: 'json', //Tratamento da resposta
+            beforeSend: function(){ console.log("Carregando formulário de empréstimo de livro..."); } //Antes de enviar..
+
+        }).done(function(form_edit_book){
+
+            //O container é esvaziado para impedir sobreposição de conteúdo
+            $('#modal_form').empty();
+
+            //O formulário aparece
+            $("#modal_form").hide().html(form_edit_book).slideDown(1000);
+
+            //Recuperação dos valores DEFAULT da linha para o formulário de edição
+            id_book = document.getElementById("book-title_loan_input").value = vetor_tds[0].innerHTML;
+
 
         });
     }
@@ -447,7 +579,7 @@
 
     });
 
-    //EXECUÇÃO DA EDIÇÃO DE LIVRO
+    //EXECUÇÃO DA EDIÇÃO DE LIVRO******
     $(document).on("click", "#btn_edit_book" ,function(e){
         e.preventDefault();
 
@@ -538,7 +670,7 @@
 
     });
 
-    //EXECUÇÃO DA EDIÇÃO DE ÁREA
+    //EXECUÇÃO DA EDIÇÃO DE ÁREA*********
     $(document).on("click", "#btn_edit_area" ,function(e){
         e.preventDefault();
 
@@ -587,25 +719,14 @@
 
     });
 
-    //EXECUÇÃO DA EXCLUSÃO DE LINHA
+    //EXECUÇÃO DA EXCLUSÃO DE LIVRO*******
+
+    //EXECUÇÃO DA EXCLUSÃO DE LIVRO********
+
+    //EXECUÇÃO DO EMPRÉSTIMO
+
 
     /* EMPRÉSTIMO E DEVOLUÇÃO -------------------------------------------------------------------------------*/
-
-    //Registrar novo empréstimo
-    $(document).on("click", ".btn_loan" ,function(){
-        htdocs = window.location.origin;
-
-        //Renderização do formulário de edição
-        $("#modal_form").load(htdocs+"/proj_biblioteca/view/modals/forms/insert/new_loan.html", function(responseTxt, statusTxt, xhr){
-
-            $("#modal_form").fadeIn(500);
-
-            /*if(statusTxt == "success"){
-
-            }*/
-
-        });
-    });
 
     //Realizar devolução
     $(document).on("click", "#btn-do_devolution" ,function(){

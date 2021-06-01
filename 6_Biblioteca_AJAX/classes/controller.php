@@ -220,20 +220,20 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-warning btn_edit r-{$value['id']}' onclick = 'updateBook(this)'> Editar </button>
+                            <button type='button' class='btn btn-success btn_edit r-{$value['id']}' onclick = 'updateBook(this)'> Editar </button>
                             <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteBook(this)'> Excluir </button>
                         </td>";
 
                         if($value['status'] == "0"){
 
                                 $table .= "<td>
-                                <button type='button' class='btn btn-warning btn_loan r-{$value['id']}' onclick = 'bookLoan(this)'> Emprestar </button>
+                                <button type='button' class='btn btn-danger btn_loan r-{$value['id']}' onclick = 'bookLoan(this)'> Emprestar </button>
                             </td>";
 
                         }else if($value['status'] == "1"){
 
                                 $table .= "<td>
-                                <button type='button' class='btn btn-warning btn_loan r-{$value['id']}' disabled> Emprestar </button>
+                                <button type='button' class='btn btn-danger btn_loan r-{$value['id']}' disabled> Emprestar </button>
                             </td>";
 
                         }
@@ -288,7 +288,7 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-warning btn_edit r-{$value['id']}' onclick = 'updateArea(this)'>Editar</button>
+                            <button type='button' class='btn btn-success btn_edit r-{$value['id']}' onclick = 'updateArea(this)'>Editar</button>
                             <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteArea(this)'>Excluir</button>
                         </td>";
 
@@ -344,7 +344,7 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-warning btn_edit r-{$value['matricula']}' onclick = 'updateStudent(this)'>Editar</button>
+                            <button type='button' class='btn btn-success btn_edit r-{$value['matricula']}' onclick = 'updateStudent(this)'>Editar</button>
                             <button type='button' class='btn btn-danger btn_delete r-{$value['matricula']}' onclick = 'deleteStudent(this)'>Excluir</button>
                         </td>";
 
@@ -358,15 +358,15 @@
 
                     //Cabeçalho fixo
                     $table = "
-                    <div style = 'width: max-content; padding-bottom: 10px;'><button type='button' class='btn btn-success' id = 'btn-do_devolution'><i class='fas fa-minus'></i> Devolver </button></div>
                     <table class='table table-hover table-light'>
                     <thead>
                     <tr>
-                        <th scope='col'>Selecionar</th>
+                        <th scope='col'>ID do empréstimo</th>
                         <th scope='col'>Livro</th>
                         <th scope='col'>Aluno</th>
                         <th scope='col'>Data Retirada</th>
                         <th scope='col'>Data Devolução</th>
+                        <th scope='col'>Devolução</th>
                     </tr>
                     </thead>
                     <tbody>";
@@ -384,18 +384,20 @@
                             if($key == 'id'){
 
                                 //Adiciona o valor ao table header na linha 
-                                $table .= "<th scope='row'><input type='checkbox' id='scales' name='$item'></th>";
+                                $table .= "<th scope='row' class = 'r-{$value['id']}'>$item</th>";
                                 
                             
                             //Se não for id_area e nome_area
                             }else{
 
                                 //Adicionar o item, normalmente
-                                $table .= "<td>$item</td>";
+                                $table .= "<td class = 'r-{$value['id']}'>$item</td>";
 
                             }
 
                         }
+
+                        $table .= "<td><button type='button' class='btn btn-danger btn_devo r-{$value['id']}' onclick = 'doDevolution(this)'><i class='fas fa-minus'></i> Devolver</button></td>";
 
                         //Fecha a linha atual
                         $table .= "</tr>";
@@ -472,7 +474,7 @@
                         <label for='author-book_input' class='form-label'>Autor</label>
                         <input type='text' class='form-control' id='author-book-edit_input' style = 'background: lightgray; box-shadow: none; border: none;'>
                         <label for='area-book_input' class='form-label'>Área</label>
-                        <select class='form-select' aria-label='Default select example' name='area_select' id='area-book_input'>
+                        <select class='form-select' aria-label='Default select example' name='area_select' id='area_select'>
                         <option value = ''>Selecione</option>";
 
                         //Percorrer o array de dados //$key é a linha, e $value é o array do registro
@@ -496,7 +498,7 @@
                         $form .= "
                         </select>
                         </div>
-                        <button type='submit' class='btn btn-primary' id = 'btn_register_book'>Cadastrar</button>
+                        <button type='submit' class='btn btn-primary' id = 'btn_edit_book'>Cadastrar</button>
                         <button class='btn btn-primary btn_close'>Cancelar</button>
                     </form>";
                     
@@ -510,7 +512,7 @@
                         <label for='book-title_loan_input' class='form-label'>ID livro</label>
                         <input type='text' class='form-control' id='book-title_loan_input' style = 'background: lightgray; box-shadow: none; border: none;' readonly required>
                         <label for='student-name_loan_input' class='form-label'>Aluno</label>
-                        <select class='form-select' aria-label='Default select example' name='student_select' id='student-loan_input'>
+                        <select class='form-select' aria-label='Default select example' name='student_select' id='student_select'>
                         <option value = ''>Selecione</option>";
 
                     //Percorrer o array de dados //$key é a linha, e $value é o array do registro
@@ -592,8 +594,44 @@
 
         }
 
-        public function setLoan(){
+        public function newArea($area){
 
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber true ou false
+            $register = $model_obj->setArea($area);
+
+            //Se o retorno da pesquisa não for false
+            if($register){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
+
+        }
+
+        public function newLoan($book,$student,$date){
+            //echo "$book,$student,$date"; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber, em todos os casos, um array associativo
+            $loan = $model_obj->setLoan($book,$student,$date);
+
+            //Se o retorno da pesquisa não for false
+            if($loan){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
         }
 
         /*MÉTODOS UPDATE ****************************************************/
@@ -639,11 +677,106 @@
 
         }
 
-        public function updateLoan(){
+        public function editArea($area,$area_name){
+            //echo $area,$area_name; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber, em todos os casos, um array associativo
+            $edit = $model_obj->updateArea($area,$area_name);
+
+            //Se o retorno da pesquisa não for false
+            if($edit){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
 
         }
 
-        public function updateArea(){
+        /*MÉTODOS EXCLUSÃO******************************************************/
+        public function delBook($id_book){
+            //echo "$id_book"; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber true ou false
+            $delete = $model_obj->deleteBook($id_book);
+
+            //Se o retorno da pesquisa não for false
+            if($delete){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
+        }
+
+        public function delStudent($id_student){
+            //echo "$id_student"; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber true ou false
+            $delete = $model_obj->deleteStudent($id_student);
+
+            //Se o retorno da pesquisa não for false
+            if($delete){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
+        }
+
+        public function delArea($id_area){
+            //echo "$id_area"; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber true ou false
+            $delete = $model_obj->deleteArea($id_area);
+
+            //Se o retorno da pesquisa não for false
+            if($delete){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
+        }
+
+        public function doDevolution($loan_id, $book_id){
+            //echo "$book_devo"; die();
+
+            $model_obj = instance_model::getInstance();
+
+            //Irá receber true ou false
+            $devolution = $model_obj->deleteLoan($loan_id, $book_id);
+
+            //Se o retorno da pesquisa não for false
+            if($devolution){
+
+                return true;
+
+            }else{
+
+                return false;
+                
+            }
         }
 
 

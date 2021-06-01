@@ -1,8 +1,10 @@
 <?php
 
-    require_once("C:/xampp/htdocs/proj_biblioteca/vendor/autoload.php");
+    require_once("../../proj_biblioteca/vendor/autoload.php");
     use Instances\instance_controller;
     use Classes\controller;
+
+    //echo __DIR__; die();
 
     header('Content-Type: application/json');
 
@@ -158,11 +160,35 @@
 
     }
 
+    /* EXECUÇÃO DAS OPERAÇÕES DOS FORMULÁRIOS ---------------------------------------------------------*/
+
+    //CADASTRAR LIVRO
+    if(isset($_POST['new_book'])){
+
+        if(!empty($_POST['new_book'])){
+           //print_r($_POST['new_book']); die();
+
+            $title = $_POST['new_book']['title'];
+            $author = $_POST['new_book']['author'];
+            $area = $_POST['new_book']['area'];
+            //echo "$id, $title, $author, $area"; die();
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $register = $obj->newBook($title,$author,$area);
+
+            echo json_encode($register);
+
+        }
+        
+    }
+
     //EDITAR LIVRO
     if(isset($_POST['edit_book'])){
 
         if(!empty($_POST['edit_book'])){
-           //print_r($_POST['new_student']); die();
+           //print_r($_POST['edit_book']); die();
 
             $id = $_POST['edit_book']['id'];
             $title = $_POST['edit_book']['title'];
@@ -228,22 +254,91 @@
         
     }
 
-    //EDITAR ÁREA
-    if(isset($_POST['edit_area'])){
+    //CADASTRAR ÁREA
+    if(isset($_POST['new_area'])){
 
-        if(!empty($_POST['new_student'])){
-           //print_r($_POST['new_student']); die();
+        if(!empty($_POST['new_area'])){
+            //echo $_POST['new_area']; die();
 
-            $name = $_POST['new_student']['name'];
-            $email = $_POST['new_student']['email'];
-            $cpf = $_POST['new_student']['cpf'];
-            $data = $_POST['new_student']['date'];
-            //echo "$name, $email, $cpf, $data"; die();
+            $area_name = $_POST['new_area'];
 
             //Instanciação da classe controller
             $obj = instance_controller::getInstance();
 
-            $register = $obj->newStudent($name,$email,$cpf,$data);
+            $register = $obj->newArea($area_name);
+
+            echo json_encode($register);
+
+        }
+        
+    }
+
+    //EDITAR ÁREA
+    if(isset($_POST['edit_area'])){
+
+        if(!empty($_POST['edit_area'])){
+
+            $area_id = $_POST['edit_area']['area_id'];
+            $area_name = $_POST['edit_area']['area_name'];
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $edit_area = $obj->editArea($area_id,$area_name);
+
+            echo json_encode($edit_area);
+
+        }
+        
+    }
+
+    //EXCLUIR LIVRO
+    if(isset($_POST['delete_book'])){
+
+        if(!empty($_POST['delete_book'])){
+
+            $book_id = $_POST['delete_book'];
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $register = $obj->delBook($book_id);
+
+            echo json_encode($register);
+
+        }
+        
+    }
+
+    //EXCLUIR ALUNO
+    if(isset($_POST['delete_student'])){
+
+        if(!empty($_POST['delete_student'])){
+
+            $student_id = $_POST['delete_student'];
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $register = $obj->delStudent($student_id);
+
+            echo json_encode($register);
+
+        }
+        
+    }
+
+    //EXCLUIR ÁREA
+    if(isset($_POST['delete_area'])){
+
+        if(!empty($_POST['delete_area'])){
+
+            $area_id = $_POST['delete_area'];
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $register = $obj->delArea($area_id);
 
             echo json_encode($register);
 
@@ -252,10 +347,48 @@
     }
 
     //REALIZAR EMPRÉSTIMO
+    if(isset($_POST['new_loan'])){
+
+        if(!empty($_POST['new_loan'])){
+           //print_r($_POST['new_loan']); die();
+
+            $book = $_POST['new_loan']['book'];
+            $student = $_POST['new_loan']['student'];
+            $date = $_POST['new_loan']['date'];
+            //echo "$name, $email, $cpf, $data"; die();
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $register = $obj->newLoan($book,$student,$date);
+
+            echo json_encode($register);
+
+        }
+        
+    }
 
     //REALIZAR DEVOLUÇÃO
+    if(isset($_POST['devolution'])){
 
-    /*//PESQUISA NO INPUT DE PESQUISA //RECUPERA O VALOR DA SESSION
+        if(!empty($_POST['devolution'])){
+           //print_r($_POST['new_loan']); die();
+
+            $loan_id = $_POST['devolution']['dev_loan_id'];
+            $book_id = $_POST['devolution']['dev_book_id'];
+
+            //Instanciação da classe controller
+            $obj = instance_controller::getInstance();
+
+            $devolution = $obj->doDevolution($loan_id, $book_id);
+
+            echo json_encode($devolution);
+
+        }
+        
+    }
+
+    //PESQUISA NO INPUT DE PESQUISA //RECUPERA O VALOR DA SESSION
     if(isset($_POST['do_search']) && isset($_SESSION['actual_table'])){
 
         if(!empty($_POST['do_search'])){
@@ -321,6 +454,6 @@
             }
         }
 
-    }*/
+    }
 
 ?>

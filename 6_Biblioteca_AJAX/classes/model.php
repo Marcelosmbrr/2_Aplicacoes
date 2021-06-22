@@ -11,7 +11,7 @@
         //Pesquisa por livros: pode receber especificações e parâmetros, se não será uma pesquisa universal
         public function getBooks($where=NULL, $params=NULL){
 
-            $sql = "SELECT a.id, a.titulo, a.autor, a.status, b.nome_area FROM tb_livro a LEFT OUTER JOIN tb_area b ON a.id_area = b.id $where";
+            $sql = "SELECT a.id, a.titulo, a.autor, a.status, b.nome_area FROM tb_livro a LEFT OUTER JOIN tb_area b ON a.id_area = b.id $where"; //echo $sql;
 
             $sql_obj = instance_sql::getInstance();
 
@@ -63,7 +63,6 @@
 
         //REGISTRO LIVRO
         public function setBook($title, $author, $area){
-            //echo "$title, $author, $area"; die();
 
             $sql = "INSERT INTO tb_livro (id, titulo, autor, `status`, id_area) VALUES (DEFAULT, :titulo, :autor, DEFAULT, :area)";
             $params = array(":titulo"=>$title, ":autor"=>$author, ":area"=>$area); 
@@ -78,7 +77,6 @@
 
         //REGISTRO ALUNO
         public function setStudent($name,$email,$cpf,$data){
-            //echo "$name, $email, $cpf, $data"; die();
 
             $sql = "INSERT INTO tb_aluno VALUES (DEFAULT, :nome, :email, :cpf, :dt)";
             $params = array(":nome"=>$name, ":email"=>$email, ":cpf"=>$cpf,":dt"=>$data); 
@@ -107,7 +105,6 @@
 
         //EDIÇÃO DE ALUNO
         public function updateStudent($id,$name,$email,$cpf,$data){
-            //echo "$name, $email, $cpf, $data"; die();
 
             $sql = "UPDATE tb_aluno SET nome = :nome, email = :email, cpf = :cpf, data_nasc = :dt WHERE matricula = :matr";
             $params = array(":matr"=>$id, ":nome"=>$name, ":email"=>$email, ":cpf"=>$cpf,":dt"=>$data); 
@@ -122,7 +119,6 @@
 
         //EDIÇÃO DE LIVRO
         public function updateBook($id,$title,$author,$area){
-            //echo "$id,$title,$author,$area"; die();
 
             $sql = "UPDATE tb_livro SET titulo = :title, autor = :author, `status` = DEFAULT, id_area = :area WHERE id = :id_book";
             $params = array(":id_book"=>$id, ":title"=>$title, ":author"=>$author, ":area"=>$area); 
@@ -151,7 +147,6 @@
 
         //REALIZAR EMPRÉSTIMO
         public function setLoan($book,$student,$date){
-            //echo "$book,$student,$date"; die();
 
             $sql = "INSERT INTO tb_reserva (id, `status`, data_retirada, data_entrega, matricula_aluno, id_livro) VALUES (DEFAULT, :stat, CURDATE(), :date_f, :student, :book);";
             $params = array(":stat"=>true, ":date_f"=>$date, ":student"=>$student,":book"=>$book); 

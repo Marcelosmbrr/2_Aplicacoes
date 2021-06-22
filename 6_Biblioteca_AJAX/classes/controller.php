@@ -122,7 +122,6 @@
 
                 //Irá receber um array associativo da tabela áreas
                 $data = $model_obj->getAreas(NULL, NULL);
-                //print_r($data); die();
 
                 //Irá receber um formulário para registro de livro, em formato string
                 $form = $this->constructForm($type, $data);
@@ -138,7 +137,6 @@
 
                 //Irá receber um array associativo da tabela áreas
                 $data = $model_obj->getAreas(NULL, NULL);
-                //print_r($data); die();
 
                 //Neste caso, o formulário será apenas construído
                 //Pois não depende de dados do banco
@@ -153,7 +151,6 @@
 
                 //Irá receber um array associativo da tabela áreas
                 $data = $model_obj->getStudents(NULL, NULL);
-                //print_r($data); die();
 
                 //Neste caso, o formulário será apenas construído
                 //Pois não depende de dados do banco
@@ -205,13 +202,13 @@
                             if($key == 'id'){
 
                                 //Adiciona o valor ao table header na linha 
-                                $table .= "<th scope='row' class = 'r-{$value['id']}'>$item</th>";
+                                $table .= "<th scope='row' value = '{$value['id']}'>$item</th>";
                             
                             //Se não for id_area e nome_area
                             }else{
 
                                 //Adicionar o item, normalmente
-                                $table .= "<td class = 'r-{$value['id']}'>$item</td>";
+                                $table .= "<td value = '{$value['id']}'>$item</td>";
 
                             }
 
@@ -220,20 +217,20 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-success btn_edit r-{$value['id']}' onclick = 'updateBook(this)'> Editar </button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteBook(this)'> Excluir </button>
+                            <button type='button' class='btn btn-success btn_edit' value = '{$value['id']}' onclick = 'updateBook(this)'> Editar </button>
+                            <button type='button' class='btn btn-danger btn_delete' value = '{$value['id']}' onclick = 'deleteBook(this)'> Excluir </button>
                         </td>";
 
                         if($value['status'] == "0"){
 
                                 $table .= "<td>
-                                <button type='button' class='btn btn-danger btn_loan r-{$value['id']}' onclick = 'bookLoan(this)'> Emprestar </button>
+                                <button type='button' class='btn btn-danger btn_loan' value = '{$value['id']}' onclick = 'bookLoan(this)'> Emprestar </button>
                             </td>";
 
                         }else if($value['status'] == "1"){
 
                                 $table .= "<td>
-                                <button type='button' class='btn btn-danger btn_loan r-{$value['id']}' disabled> Emprestar </button>
+                                <button type='button' class='btn btn-danger btn_loan' value = '{$value['id']}' disabled> Emprestar </button>
                             </td>";
 
                         }
@@ -273,13 +270,13 @@
                             if($key == 'id'){
 
                                 //Adiciona o valor ao table header na linha 
-                                $table .= "<th scope='row' class = 'r-{$value['id']}'>$item</th>";
+                                $table .= "<th scope='row' value = '{$value['id']}'>$item</th>";
                             
                             //Se não for id_area e nome_area
                             }else{
 
                                 //Adicionar o item, normalmente
-                                $table .= "<td class = 'r-{$value['id']}'>$item</td>";
+                                $table .= "<td value = '{$value['id']}'>$item</td>";
 
                             }
 
@@ -288,8 +285,8 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-success btn_edit r-{$value['id']}' onclick = 'updateArea(this)'>Editar</button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['id']}' onclick = 'deleteArea(this)'>Excluir</button>
+                            <button type='button' class='btn btn-success btn_edit' value = '{$value['id']}' onclick = 'updateArea(this)'>Editar</button>
+                            <button type='button' class='btn btn-danger btn_delete' value = '{$value['id']}' onclick = 'deleteArea(this)'>Excluir</button>
                         </td>";
 
                         //Abre uma linha
@@ -329,13 +326,13 @@
                             if($key == 'matricula'){
 
                                 //Adiciona o valor ao table header na linha 
-                                $table .= "<th scope='row' class = 'r-{$value['matricula']}''>$item</th>";
+                                $table .= "<th scope='row' value = '{$value['matricula']}'>$item</th>";
                             
                             //Se não for id_area e nome_area
                             }else{
 
                                 //Adicionar o item, normalmente
-                                $table .= "<td class = 'r-{$value['matricula']}''>$item</td>";
+                                $table .= "<td value = '{$value['matricula']}'>$item</td>";
 
                             }
 
@@ -344,8 +341,8 @@
                         //Está será a última coluna
                         //Este terá os botões de registro, e cada um terá a classe identificadora do id da linha
                         $table .= "<td>
-                            <button type='button' class='btn btn-success btn_edit r-{$value['matricula']}' onclick = 'updateStudent(this)'>Editar</button>
-                            <button type='button' class='btn btn-danger btn_delete r-{$value['matricula']}' onclick = 'deleteStudent(this)'>Excluir</button>
+                            <button type='button' class='btn btn-success btn_edit' value = '{$value['matricula']}' onclick = 'updateStudent(this)'>Editar</button>
+                            <button type='button' class='btn btn-danger btn_delete' value = '{$value['matricula']}' onclick = 'deleteStudent(this)'>Excluir</button>
                         </td>";
 
                         //Fecha a linha atual
@@ -384,20 +381,20 @@
                             if($key == 'id'){
 
                                 //Adiciona o valor ao table header na linha 
-                                $table .= "<th scope='row' class = 'r-{$value['id']}'>$item</th>";
+                                $table .= "<th scope='row' value = '{$value['id']}'>$item</th>";
                                 
                             
                             //Se não for id_area e nome_area
                             }else{
 
                                 //Adicionar o item, normalmente
-                                $table .= "<td class = 'r-{$value['id']}'>$item</td>";
+                                $table .= "<td value = '{$value['id']}'>$item</td>";
 
                             }
 
                         }
 
-                        $table .= "<td><button type='button' class='btn btn-danger btn_devo r-{$value['id']}' onclick = 'doDevolution(this)'><i class='fas fa-minus'></i> Devolver</button></td>";
+                        $table .= "<td><button type='button' class='btn btn-danger btn_devo' value = '{$value['id']}' onclick = 'doDevolution(this)'><i class='fas fa-minus'></i> Devolver</button></td>";
 
                         //Fecha a linha atual
                         $table .= "</tr>";
@@ -418,7 +415,6 @@
 
         //Método para construção de formulários
         public function constructForm($type, $data){
-            //print_r($data); die();
 
             switch($type){
 
@@ -457,7 +453,7 @@
                         </select>
                         </div>
                         <button type='submit' class='btn btn-primary' id = 'btn_register_book'>Cadastrar</button>
-                        <button class='btn btn-primary btn_close'>Cancelar</button>
+                        <button class='btn btn-primary btn_close'>Fechar</button>
                     </form>";
                     
                 break;
@@ -499,7 +495,7 @@
                         </select>
                         </div>
                         <button type='submit' class='btn btn-primary' id = 'btn_edit_book'>Cadastrar</button>
-                        <button class='btn btn-primary btn_close'>Cancelar</button>
+                        <button class='btn btn-primary btn_close'>Fechar</button>
                     </form>";
                     
                 break;
@@ -539,21 +535,19 @@
                     <input type='date' class='form-control' id='book-date_loan_input' style = 'background: lightgray; box-shadow: none; border: none;' required> 
                     </div>
                     <button type='submit' class='btn btn-primary' id = 'btn_register_loan'>Cadastrar</button>
-                    <button class='btn btn-primary btn_close'>Cancelar</button>
+                    <button class='btn btn-primary btn_close'>Fechar</button>
                     </form>";
 
                 break;
 
             }
 
-            //echo $form; die();
             return $form;
 
         }
 
         /* MÉTODOS INSERT **************************************************/
         public function newBook($title,$author,$area){
-            //echo "$title, $author, $area"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -574,7 +568,6 @@
         }
 
         public function newStudent($name,$email,$cpf,$data){
-            //echo "$name, $email, $cpf, $data"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -615,7 +608,6 @@
         }
 
         public function newLoan($book,$student,$date){
-            //echo "$book,$student,$date"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -636,7 +628,6 @@
 
         /*MÉTODOS UPDATE ****************************************************/
         public function updateBook($id,$title,$author,$area){
-            //echo "$name, $email, $cpf, $data"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -657,7 +648,6 @@
         }
 
         public function editStudent($id,$name,$email,$cpf,$data){
-            //echo "$name, $email, $cpf, $data"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -678,7 +668,6 @@
         }
 
         public function editArea($area,$area_name){
-            //echo $area,$area_name; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -700,7 +689,6 @@
 
         /*MÉTODOS EXCLUSÃO******************************************************/
         public function delBook($id_book){
-            //echo "$id_book"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -720,7 +708,6 @@
         }
 
         public function delStudent($id_student){
-            //echo "$id_student"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -740,7 +727,6 @@
         }
 
         public function delArea($id_area){
-            //echo "$id_area"; die();
 
             $model_obj = instance_model::getInstance();
 
@@ -760,7 +746,6 @@
         }
 
         public function doDevolution($loan_id, $book_id){
-            //echo "$book_devo"; die();
 
             $model_obj = instance_model::getInstance();
 

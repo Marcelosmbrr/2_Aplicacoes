@@ -10,8 +10,6 @@
         ////////////////////////////////////////////EXECUÇÃO AUTOMÁTICA DO SQL////////////////////////////////////////////////////////////////////////
 
         private function queryInit($query_type, $query, $params = array()){
-            //echo $query;
-            //print_r($params); die();
 
             //instance_connection::getInstance() retorna a instância da classe PDO
             $pdo = instance_connection::getInstance();
@@ -77,9 +75,6 @@
 
         //Este método executa qualquer INSERT
         public function insert($query, $params = array()){
-
-            //echo $query;
-            //print_r($params); 
             
             //Recebe true, ou false
             $exec_return = $this->queryInit("insert", $query, $params);

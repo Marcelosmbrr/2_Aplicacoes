@@ -1,0 +1,13 @@
+{
+    "name": "lcmar/recuperar_senha_email",
+    "description": "C\u0000digo para recuperar a senha",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {"phpmailer/phpmailer": "^6.5"},
+    "autoload": {
+        "psr-4":{
+            "Classes\\": "class/",
+            "Instances\\": "instances/"
+        }
+    }
+}

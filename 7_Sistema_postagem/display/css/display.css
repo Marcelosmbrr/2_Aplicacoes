@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: arial;
+}
+
+body{
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul, ol, li, a{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+button{
+    color: #333;
+}
+
+a{
+    margin-left: 15px;
+}
+
+a:hover{
+    color: lightgray;
+}
+
+.actual-form{
+    margin-top: 100px;
+    color: #fff;
+}
+
+.form-container{
+    border: 5px solid #fff;
+    padding: 25px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.link_pass_recovery{
+    text-decoration: underline white;
+}

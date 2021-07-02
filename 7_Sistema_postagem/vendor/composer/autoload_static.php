@@ -28,11 +28,11 @@ class ComposerStaticInit09e25ac9d26c587e824f8e802f800f95
         ),
         'Instances\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/instances',
+            0 => __DIR__ . '/../..' . '/Classes/Instances',
         ),
         'Classes\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/class',
+            0 => __DIR__ . '/../..' . '/Classes',
         ),
     );
 

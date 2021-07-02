@@ -4,10 +4,9 @@
     //Neste caso, uma instância da classe mainController
 
     namespace Instances;
-    use Classes\Person;
-    use Instances\instance_connection;
+    use Classes\DAOsql;
 
-    class instance_person{
+    class InstanceDAOsql{
 
         //Serve para a condicional
         private static $instance;
@@ -21,9 +20,8 @@
                 //É criada uma
                 try{
 
-                    //A classe pessoa é instanciada
-                    //Recebe como argumento o objeto PDO também recuperado utilizando o padrão SINGLETON
-                    self::$instance = new Person(instance_connection::getInstance()); 
+                    //A classe DAOsql é instanciada
+                    self::$instance = new DAOsql(); 
                     return self::$instance;
                     
                 }

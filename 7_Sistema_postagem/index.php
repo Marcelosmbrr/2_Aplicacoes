@@ -17,7 +17,7 @@
     </div>
     
     <class class = "form-container">
-        <form method = "POST" action = "scripts/php/login_verification.php">
+        <form method = "POST" action = "scripts/php/outside_system/login_verification.php">
             <div class="mb-3">
               <label for="username_login" class="form-label">Nome de usuário</label>
               <input type="text" class="form-control" id="username_login" name = "username_login" placeholder="Digite seu nome de usuário" required>

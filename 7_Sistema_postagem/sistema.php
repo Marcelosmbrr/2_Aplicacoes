@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Olá <?php echo $_SESSION['user']; ?>!</h5>
                         <p class="card-text"><i class="fas fa-globe" style = "color: #157347;"></i> User <?php echo $_SESSION['iduser']; ?></p>
-                        <a href="scripts/php/logout.php" class="btn btn-primary">Voltar para a tela de login</a>
+                        <a href="scripts/php/outside_system/logout.php" class="btn btn-primary">Voltar para a tela de login</a>
                     </div>
                 </div>
                 

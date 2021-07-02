@@ -17,7 +17,7 @@
     </div>
     
     <class class = "form-container">
-        <form method = "POST" action = "scripts/php/register_verification.php" enctype="multipart/form-data">
+        <form method = "POST" action = "scripts/php/outside_system/register_verification.php" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="username_reg" class="form-label">Nome de usuário</label>
               <input type="text" class="form-control" id="username_reg" name = "username_reg" placeholder="Escolha um nome de usuário" required>

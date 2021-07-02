@@ -6,7 +6,7 @@
     namespace Instances;
     use PDO;
 
-    class instance_connection{
+    class InstanceConnection{
 
         //Serve para a condicional
         private static $instance;
